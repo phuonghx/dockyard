@@ -19,6 +19,13 @@ A fast, good-looking <b>KDE Plasma 6 widget for Docker and Podman</b>: watch and
 <p align="center"><a href="https://phuonghx.github.io/dockyard/"><b>Website</b></a> · <a href="#install">Install</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
 
 <p align="center">
+<a href="https://store.kde.org/p/2382787/"><img alt="Get Dockyard on the KDE Store" src="https://img.shields.io/badge/KDE%20Store-Get%20Dockyard-1d99f3?style=for-the-badge&logo=kde&logoColor=white"></a>
+<a href="https://www.opendesktop.org/p/2382787/"><img alt="Dockyard on openDesktop.org" src="https://img.shields.io/badge/openDesktop.org-Dockyard-3daee9?style=for-the-badge&logo=kde&logoColor=white"></a>
+</p>
+
+<p align="center"><b>Also available on the <a href="https://store.kde.org/p/2382787/">KDE Store</a> and <a href="https://www.opendesktop.org/p/2382787/">openDesktop.org</a>.</b></p>
+
+<p align="center">
   <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-2dd4bf"></a>
   <img alt="Plasma 6" src="https://img.shields.io/badge/KDE_Plasma-6-1d99f3">
   <img alt="Fedora" src="https://img.shields.io/badge/Fedora-KDE-51a2da">
@@ -38,7 +45,7 @@ git clone https://github.com/phuonghx/dockyard
 cd dockyard
 ./install.sh --restart      # per-user, no root. --restart reloads plasmashell
 ```
-No terminal? Download `dockyard-<version>.plasmoid` from [Releases](https://github.com/phuonghx/dockyard/releases) and use **Add Widgets → Get New Widgets → Install Widget From Local File…**, or `kpackagetool6 -t Plasma/Applet -i dockyard-<version>.plasmoid`.
+> **Prefer a download?** Get it from the **[KDE Store](https://store.kde.org/p/2382787/)** or **[openDesktop.org](https://www.opendesktop.org/p/2382787/)**, or grab `dockyard-<version>.plasmoid` from [Releases](https://github.com/phuonghx/dockyard/releases) and use **Add Widgets → Get New Widgets → Install Widget From Local File…**, or `kpackagetool6 -t Plasma/Applet -i dockyard-<version>.plasmoid`.
 
 Then **right-click your panel → Add Widgets → Dockyard** and drag it in. To try it first in its own window:
 `plasmawindowed io.dockyard.widget`.

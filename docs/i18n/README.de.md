@@ -17,6 +17,11 @@
 
 <p align="center"><a href="https://phuonghx.github.io/dockyard/de/"><b>Webseite</b></a> · <a href="#installation">Installation</a> · <a href="../../CONTRIBUTING.md">Mitmachen</a></p>
 
+<p align="center">
+<a href="https://store.kde.org/p/2382787/"><img alt="Get Dockyard on the KDE Store" src="https://img.shields.io/badge/KDE%20Store-Get%20Dockyard-1d99f3?style=for-the-badge&logo=kde&logoColor=white"></a>
+<a href="https://www.opendesktop.org/p/2382787/"><img alt="Dockyard on openDesktop.org" src="https://img.shields.io/badge/openDesktop.org-Dockyard-3daee9?style=for-the-badge&logo=kde&logoColor=white"></a>
+</p>
+
 <p align="center"><img src="../images/hero.png" alt="Dockyard" width="900"></p>
 
 ## Warum Dockyard

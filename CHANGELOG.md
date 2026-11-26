@@ -19,6 +19,7 @@ versions follow [Semantic Versioning](https://semver.org).
 - Translations (see `po/`) and a language picker: the 🌐 button in the popup and a Language setting, applied instantly; "Automatic" follows the system. READMEs in several languages under `docs/i18n/` with language buttons.
 - Website on GitHub Pages, one page per language with a language selector with Open Graph, Twitter card, JSON-LD, sitemap and hreflang; README banner.
 - `tools/package.sh` and a release workflow that attach `dockyard-<version>.plasmoid` to every `v*` tag.
+- Links to the KDE Store and openDesktop.org page in the README, the translated READMEs and the website.
 - "Open on" setting to choose which tab the popup starts on.
 - Illustrated README (English and Vietnamese), contributor docs, CLA, issue and PR templates, CI.
 - `tools/screenshots.sh` regenerates the README images from a fake engine.
