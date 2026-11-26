@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dockyard: виджет Docker и Podman для KDE Plasma 6</title>
+<meta name="description" content="Dockyard — бесплатный виджет с открытым кодом для KDE Plasma 6: следите за контейнерами, образами, томами и журналами Docker и Podman и управляйте ими прямо с панели. Создан для Fedora KDE.">
+<link rel="canonical" href="https://phuonghx.github.io/dockyard/ru/">
+<link rel="alternate" hreflang="en" href="https://phuonghx.github.io/dockyard/">
+<link rel="alternate" hreflang="vi" href="https://phuonghx.github.io/dockyard/vi/">
+<link rel="alternate" hreflang="es" href="https://phuonghx.github.io/dockyard/es/">
+<link rel="alternate" hreflang="fr" href="https://phuonghx.github.io/dockyard/fr/">
+<link rel="alternate" hreflang="de" href="https://phuonghx.github.io/dockyard/de/">
+<link rel="alternate" hreflang="pt-BR" href="https://phuonghx.github.io/dockyard/pt-BR/">
+<link rel="alternate" hreflang="ru" href="https://phuonghx.github.io/dockyard/ru/">
+<link rel="alternate" hreflang="ja" href="https://phuonghx.github.io/dockyard/ja/">
+<link rel="alternate" hreflang="zh-CN" href="https://phuonghx.github.io/dockyard/zh-CN/">
+<link rel="alternate" hreflang="x-default" href="https://phuonghx.github.io/dockyard/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0b1017">
+<meta name="author" content="Xuan-Phuong Hoang">
+<meta name="keywords" content="Dockyard, Docker widget, Podman widget, KDE Plasma 6, plasmoid, Fedora KDE, container manager, docker GUI, Linux">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dockyard">
+<meta property="og:title" content="Dockyard: виджет Docker и Podman для KDE Plasma 6">
+<meta property="og:description" content="Dockyard — бесплатный виджет с открытым кодом для KDE Plasma 6: следите за контейнерами, образами, томами и журналами Docker и Podman и управляйте ими прямо с панели. Создан для Fedora KDE.">
+<meta property="og:url" content="https://phuonghx.github.io/dockyard/ru/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:image" content="https://phuonghx.github.io/dockyard/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Виджет Dockyard для KDE Plasma в тёмной и светлой темах рядом со вкладкой «Образы»">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@phuonghx_">
+<meta name="twitter:creator" content="@phuonghx_">
+<meta name="twitter:title" content="Dockyard: виджет Docker и Podman для KDE Plasma 6">
+<meta name="twitter:description" content="Dockyard — бесплатный виджет с открытым кодом для KDE Plasma 6: следите за контейнерами, образами, томами и журналами Docker и Podman и управляйте ими прямо с панели. Создан для Fedora KDE.">
+<meta name="twitter:image" content="https://phuonghx.github.io/dockyard/assets/og-image.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/Geist.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://phuonghx.github.io/dockyard/#app","name":"Dockyard","alternateName":"Dockyard for KDE Plasma","url":"https://phuonghx.github.io/dockyard/ru/","description":"Dockyard — бесплатный виджет с открытым кодом для KDE Plasma 6: следите за контейнерами, образами, томами и журналами Docker и Podman и управляйте ими прямо с панели. Создан для Fedora KDE.","applicationCategory":"DeveloperApplication","applicationSubCategory":"Container management","operatingSystem":"Linux (KDE Plasma 6)","softwareRequirements":"KDE Plasma 6, Python 3, Docker or Podman","softwareVersion":"1.0.0","datePublished":"2026-11-26","license":"https://opensource.org/licenses/MIT","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://github.com/phuonghx/dockyard","codeRepository":"https://github.com/phuonghx/dockyard","installUrl":"https://phuonghx.github.io/dockyard/#install","image":"https://phuonghx.github.io/dockyard/assets/og-image.png","screenshot":["https://phuonghx.github.io/dockyard/images/overview-dark.png","https://phuonghx.github.io/dockyard/images/overview-light.png","https://phuonghx.github.io/dockyard/images/tab-images.png"],"inLanguage":["en","vi","es","fr","de","pt-BR","ru","ja","zh-CN"],"featureList":["Manifest strip of every container","CPU and memory with history","Compose project grouping","Live colour-coded logs","Shell access","Image, volume and network management","Safe disk clean-up","Desktop notifications","Dark and light themes","9 languages"],"author":{"@id":"https://phuonghx.github.io/dockyard/#author"}},{"@type":"Person","@id":"https://phuonghx.github.io/dockyard/#author","name":"Xuan-Phuong Hoang","url":"https://github.com/phuonghx","sameAs":["https://github.com/phuonghx","https://x.com/phuonghx_","https://facebook.com/phuonghx.me"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое Dockyard?","acceptedAnswer":{"@type":"Answer","text":"Dockyard — бесплатный виджет с открытым кодом для KDE Plasma 6. Он живёт на вашей панели и позволяет следить за контейнерами, образами, томами и сетями Docker или Podman и управлять ими, читать журналы и освобождать место на диске, не открывая терминал или тяжёлое приложение."}},{"@type":"Question","name":"Работает ли Dockyard с Podman?","acceptedAnswer":{"@type":"Answer","text":"Да. Он сам находит Docker, rootless Docker и совместимый с Docker сокет Podman, либо вы указываете путь к сокету в настройках виджета."}},{"@type":"Question","name":"Какие системы поддерживаются?","acceptedAnswer":{"@type":"Answer","text":"Любой рабочий стол Linux с KDE Plasma 6, проверено на Fedora KDE. Это виджет Plasma, поэтому он не работает в GNOME и других средах."}},{"@type":"Question","name":"Нужен ли Docker Desktop или другое ПО?","acceptedAnswer":{"@type":"Answer","text":"Нет. Нужны Python 3 и работающий движок Docker или Podman. Dockyard общается напрямую с локальным сокетом движка."}},{"@type":"Question","name":"Это безопасно? Отправляет ли он данные?","acceptedAnswer":{"@type":"Answer","text":"В Dockyard нет телеметрии, он ничего не отправляет, кроме обращений к локальному сокету вашего движка. Лицензия MIT, исходный код на GitHub. Как и с любым инструментом Docker, доступ к сокету Docker равносилен root."}},{"@type":"Question","name":"Как получить право использовать Docker?","acceptedAnswer":{"@type":"Answer","text":"Добавьте пользователя в группу docker командой sudo usermod -aG docker $USER и перезайдите в систему. Dockyard показывает именно эту команду, когда замечает проблему."}},{"@type":"Question","name":"Можно ли перевести его на мой язык?","acceptedAnswer":{"@type":"Answer","text":"Да. Создайте шаблон командой tools/i18n.sh new <язык>, переведите файл в любом редакторе и откройте pull request. Программировать не нужно. См. руководство Translating в CONTRIBUTING.md."}}]},{"@type":"WebSite","@id":"https://phuonghx.github.io/dockyard/#site","name":"Dockyard","url":"https://phuonghx.github.io/dockyard/","inLanguage":"ru"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="top"><div class="wrap bar">
+  <a class="brand" href="./"><img src="../assets/favicon.svg" width="30" height="30" alt="">Dockyard</a>
+  <nav class="main" aria-label="Main">
+    <a class="hide-sm" href="#features">Возможности</a>
+    <a class="hide-sm" href="#install">Установка</a>
+    <a class="hide-sm" href="#faq">Вопросы</a>
+    <a href="https://github.com/phuonghx/dockyard">GitHub</a>
+    <details class="langsel"><summary aria-label="Language"><span aria-hidden="true">🌐</span> Русский</summary><ul><li><a href="../" hreflang="en" lang="en">English</a></li><li><a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a></li><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="../ru/" hreflang="ru" lang="ru" aria-current="true">Русский</a></li><li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="../zh-CN/" hreflang="zh-CN" lang="zh-CN">简体中文</a></li></ul></details>
+  </nav>
+</div></header>
+<main id="main">
+  <section class="hero"><div class="wrap">
+    <h1>Docker и Podman в порядке, прямо на панели KDE</h1>
+    <p class="lead">Dockyard — бесплатный виджет Plasma 6 с открытым кодом: он показывает все контейнеры с одного взгляда и позволяет запускать, останавливать, перезапускать, читать журналы и наводить порядок, не выходя с рабочего стола. Создан для Fedora KDE.</p>
+    <div class="cta"><a class="btn pri" href="#install">Установить одной командой</a><a class="btn" href="https://github.com/phuonghx/dockyard">★ Поставить звезду на GitHub</a></div>
+    <p class="trust">Бесплатно · Лицензия MIT · Без телеметрии · Docker, rootless Docker и Podman</p>
+    <div class="shot"><picture><source srcset="../images/hero.webp" type="image/webp"><img src="../images/hero.png" width="1400" height="755" alt="Виджет Dockyard для KDE Plasma в тёмной и светлой темах рядом со вкладкой «Образы»" fetchpriority="high"></picture></div>
+  </div></section>
+
+  <section class="manifest-sec" aria-labelledby="manifest"><div class="wrap">
+    <h2 id="manifest">Весь ваш парк, нарисованный как грузовой манифест корабля</h2>
+    <div class="cells" aria-hidden="true"><i class="run" style="--i:0"></i><i class="run" style="--i:1"></i><i class="warn" style="--i:2"></i><i class="run" style="--i:3"></i><i class="idle" style="--i:4"></i><i class="run" style="--i:5"></i><i class="bad" style="--i:6"></i><i class="run" style="--i:7"></i><i class="run" style="--i:8"></i><i class="info" style="--i:9"></i><i class="run" style="--i:10"></i><i class="fail" style="--i:11"></i><i class="run" style="--i:12"></i><i class="run" style="--i:13"></i><i class="bad" style="--i:14"></i><i class="run" style="--i:15"></i><i class="run" style="--i:16"></i><i class="warn" style="--i:17"></i><i class="run" style="--i:18"></i><i class="run" style="--i:19"></i><i class="idle" style="--i:20"></i><i class="run" style="--i:21"></i></div>
+    <ul class="legend"><li><span class="dot run"></span>Работает</li><li><span class="dot bad"></span>Требует внимания</li><li><span class="dot warn"></span>На паузе</li><li><span class="dot idle"></span>Остановлен</li></ul>
+    <p class="lead" style="margin-top:26px">Каждая ячейка — один контейнер, цвет зависит от состояния. Ячейки остаются на месте при смене состояния, поэтому проблема заметна сама, без поисков. Щёлкните ячейку, и список перейдёт к этому контейнеру. У каждого состояния есть и своя форма, так что всё читается и без различения цветов.</p>
+  </div></section>
+
+  <section class="feat" id="features" aria-label="Возможности"><div class="wrap" style="display:grid;gap:96px">
+      <div class="row"><div class="txt"><h2>Узнайте до поломки</h2><p>ЦП и память всего запущенного с историей. Фильтры в один щелчок: работают, требуют внимания, остановлены. Когда контейнер падает, становится нездоровым или перезапускается в цикле, вы получаете уведомление на рабочем столе.</p><ul><li>Контейнеры сгруппированы по проектам Compose</li><li>Запуск, остановка и перезапуск всего проекта сразу</li><li>ЦП, память и сеть в реальном времени по каждому контейнеру</li></ul></div><div class="pic"><picture><source srcset="../images/overview-dark.webp" type="image/webp"><img src="../images/overview-dark.png" width="500" height="800" alt="Обзор Dockyard: история ЦП и памяти, полоса манифеста и контейнеры по проектам Compose" loading="lazy"></picture></div></div>
+      <div class="row flip"><div class="txt"><h2>Всё, что известно движку</h2><p>Образы, тома и сети — на соседней вкладке, с метками «Используется» и «Не используется». Удаляйте лишнее; если что-то ещё используется, движок откажет, а Dockyard объяснит почему. Панель очистки показывает перед подтверждением, что удалит каждое действие и сколько места освободит.</p><ul><li>Висячие и неиспользуемые образы, анонимные тома, кэш сборки</li><li>Именованные тома очистка никогда не трогает</li><li>Двойное подтверждение вместо модальных окон</li></ul></div><div class="pic"><picture><source srcset="../images/tab-images.webp" type="image/webp"><img src="../images/tab-images.png" width="500" height="800" alt="Вкладка «Образы» Dockyard с метками «Используется» и «Не используется»" loading="lazy"></picture></div></div>
+      <div class="row"><div class="txt"><h2>Спокойствие, когда что-то не так</h2><p>Docker не запущен, нет доступа к сокету, движок не установлен: Dockyard простыми словами объясняет, что случилось, и даёт точное решение, с кнопкой копирования или запуска Docker.</p><ul><li>Сам находит Docker, rootless Docker и Podman</li><li>Открывайте цветные журналы любого контейнера в реальном времени</li><li>Оболочка в контейнере одним щелчком</li></ul></div><div class="pic two"><picture><source srcset="../images/error-not-running.webp" type="image/webp"><img src="../images/error-not-running.png" width="500" height="800" alt="Сообщение Dockyard: Docker не запущен, с кнопкой «Запустить Docker»" loading="lazy"></picture><picture><source srcset="../images/error-permission.webp" type="image/webp"><img src="../images/error-permission.png" width="500" height="800" alt="Сообщение Dockyard: нет доступа к сокету Docker, с кнопкой «Копировать решение»" loading="lazy"></picture></div></div>
+  </div></section>
+
+  <section class="feat" aria-labelledby="langs"><div class="wrap">
+    <h2 id="langs">Говорит на вашем языке</h2>
+    <p class="lead" style="margin-top:16px">Dockyard следует языку системы, а кнопка с глобусом во всплывающем окне позволяет сменить его в любой момент. Чтобы добавить язык, нужен один файл и никакого кода.</p>
+    <div class="wide"><picture><source srcset="../images/languages.webp" type="image/webp"><img src="../images/languages.png" width="1600" height="621" alt="Dockyard на вьетнамском, немецком, русском и японском" loading="lazy"></picture></div>
+  </div></section>
+
+  <section class="allf" aria-labelledby="all"><div class="wrap">
+    <h2 id="all">Всё в комплекте</h2>
+    <ul><li><strong>Полоса манифеста</strong>: весь парк одной кликабельной строкой</li><li><strong>Показатели парка</strong>: ЦП и память с историей</li><li><strong>Понимает Compose</strong>: группировка, сворачивание, действия над проектами</li><li><strong>Журналы в реальном времени</strong>: с цветом, пауза, копирование</li><li><strong>Доступ к оболочке</strong>: bash или sh в Konsole</li><li><strong>Кликабельные порты</strong>: открыть в браузере или скопировать адрес</li><li><strong>Образы, тома, сети</strong>: метки, фильтры, безопасное удаление</li><li><strong>Освободить место</strong>: с цифрами и пояснением до подтверждения</li><li><strong>Уведомления</strong>: падения, сбои проверок состояния, циклы перезапуска</li><li><strong>Тёмная и светлая</strong>: следует схеме и шрифту Plasma</li><li><strong>Доступность</strong>: фокус с клавиатуры везде, состояние ещё и формой</li><li><strong>Много языков</strong>: выбор в виджете, легко расширять</li></ul>
+  </div></section>
+
+  <section class="install" id="install" aria-labelledby="inst"><div class="wrap">
+    <h2 id="inst">Установка на Fedora KDE меньше чем за минуту</h2>
+    <ol class="steps">
+        <li><div><h3>Проверьте основное</h3><p class="mut">KDE Plasma 6, Python 3 (в Fedora уже есть) и Docker или Podman. Больше ничего.</p></div></li>
+        <li><div><h3>Установите виджет</h3><p class="mut">Для одного пользователя, без root.</p><div class="code"><pre><code>git clone https://github.com/phuonghx/dockyard
+cd dockyard &amp;&amp; ./install.sh --restart</code></pre><button class="btn copy" type="button" data-copy="git clone https://github.com/phuonghx/dockyard
+cd dockyard &amp;&amp; ./install.sh --restart" data-done="Скопировано">Копировать</button></div></div></li>
+        <li><div><h3>Добавьте на панель</h3><p class="mut">Правый щелчок по панели, «Добавить виджеты», найдите Dockyard и перетащите. Чтобы сначала попробовать: plasmawindowed io.dockyard.widget.</p></div></li>
+    </ol>
+    <p class="note">Нет доступа к Docker? Добавьте себя в группу docker и перезайдите: sudo usermod -aG docker $USER. Для Podman: systemctl --user enable --now podman.socket.</p>
+    <p class="note">Обновление: git pull &amp;&amp; ./install.sh. Удаление: ./install.sh --uninstall.</p>
+  </div></section>
+
+  <section class="faq" id="faq" aria-labelledby="faqh"><div class="wrap">
+    <h2 id="faqh" style="margin-bottom:28px">Частые вопросы</h2>
+    <details><summary>Что такое Dockyard?</summary><p>Dockyard — бесплатный виджет с открытым кодом для KDE Plasma 6. Он живёт на вашей панели и позволяет следить за контейнерами, образами, томами и сетями Docker или Podman и управлять ими, читать журналы и освобождать место на диске, не открывая терминал или тяжёлое приложение.</p></details>
+    <details><summary>Работает ли Dockyard с Podman?</summary><p>Да. Он сам находит Docker, rootless Docker и совместимый с Docker сокет Podman, либо вы указываете путь к сокету в настройках виджета.</p></details>
+    <details><summary>Какие системы поддерживаются?</summary><p>Любой рабочий стол Linux с KDE Plasma 6, проверено на Fedora KDE. Это виджет Plasma, поэтому он не работает в GNOME и других средах.</p></details>
+    <details><summary>Нужен ли Docker Desktop или другое ПО?</summary><p>Нет. Нужны Python 3 и работающий движок Docker или Podman. Dockyard общается напрямую с локальным сокетом движка.</p></details>
+    <details><summary>Это безопасно? Отправляет ли он данные?</summary><p>В Dockyard нет телеметрии, он ничего не отправляет, кроме обращений к локальному сокету вашего движка. Лицензия MIT, исходный код на GitHub. Как и с любым инструментом Docker, доступ к сокету Docker равносилен root.</p></details>
+    <details><summary>Как получить право использовать Docker?</summary><p>Добавьте пользователя в группу docker командой sudo usermod -aG docker $USER и перезайдите в систему. Dockyard показывает именно эту команду, когда замечает проблему.</p></details>
+    <details><summary>Можно ли перевести его на мой язык?</summary><p>Да. Создайте шаблон командой tools/i18n.sh new &lt;язык&gt;, переведите файл в любом редакторе и откройте pull request. Программировать не нужно. См. руководство Translating в CONTRIBUTING.md.</p></details>
+  </div></section>
+
+  <section class="oss" aria-labelledby="oss"><div class="wrap"><div class="grid">
+    <div><h2 id="oss">Свободный и с открытым кодом</h2><p class="mut" style="margin-top:14px">Dockyard распространяется по лицензии MIT. Приветствуются сообщения об ошибках, идеи, переводы и pull request.</p>
+      <ul><li><a href="https://github.com/phuonghx/dockyard/blob/main/CONTRIBUTING.md">Руководство по участию</a></li><li><a href="https://github.com/phuonghx/dockyard/blob/main/CONTRIBUTING.md#translating">Перевести Dockyard</a></li><li><a href="https://github.com/phuonghx/dockyard/issues">Сообщить об ошибке или предложить функцию</a></li><li><a href="https://github.com/phuonghx/dockyard/blob/main/CHANGELOG.md">Журнал изменений</a></li><li><a href="https://github.com/phuonghx/dockyard/blob/main/CLA.md">Лицензионное соглашение участника (CLA)</a></li></ul></div>
+    <div><h2>Автор</h2><p class="mut" style="margin-top:14px">Xuan-Phuong Hoang, разработчик, которому хотелось, чтобы Docker на панели его Fedora KDE выглядел и вёл себя как часть системы.</p>
+      <ul><li><a href="https://github.com/phuonghx">GitHub @phuonghx</a></li><li><a href="https://x.com/phuonghx_">X @phuonghx_</a></li><li><a href="https://facebook.com/phuonghx.me">Facebook @phuonghx.me</a></li><li><a href="mailto:phuonghx.me@gmail.com">phuonghx.me@gmail.com</a></li></ul></div>
+  </div></div></section>
+</main>
+<footer><div class="wrap"><span>Dockyard · Лицензия MIT · Шрифты Geist © Vercel, SIL OFL 1.1</span><span class="flang"><a href="../" hreflang="en" lang="en">English</a> · <a href="../vi/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="../es/" hreflang="es" lang="es">Español</a> · <a href="../fr/" hreflang="fr" lang="fr">Français</a> · <a href="../de/" hreflang="de" lang="de">Deutsch</a> · <a href="../pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> · <span aria-current="true">Русский</span> · <a href="../ja/" hreflang="ja" lang="ja">日本語</a> · <a href="../zh-CN/" hreflang="zh-CN" lang="zh-CN">简体中文</a> · <a href="https://github.com/phuonghx/dockyard">GitHub</a></span></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-copy'),d=b.getAttribute('data-done'),o=b.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent=d;setTimeout(function(){b.textContent=o},1600)},function(){})})})</script>
+</body>
+</html>

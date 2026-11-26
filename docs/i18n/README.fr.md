@@ -15,7 +15,7 @@
 <h1 align="center">Dockyard</h1>
 <p align="center"><b>Gardez chaque conteneur en bon ordre.</b><br>Un widget <b>KDE Plasma 6 pour Docker et Podman</b>, rapide et soigné : surveillez et gérez conteneurs, images, volumes et journaux depuis votre panneau. Conçu pour Fedora KDE.</p>
 
-<p align="center"><a href="https://phuonghx.github.io/dockyard/"><b>Site web</b></a> · <a href="#installation">Installation</a> · <a href="../../CONTRIBUTING.md">Contribuer</a></p>
+<p align="center"><a href="https://phuonghx.github.io/dockyard/fr/"><b>Site web</b></a> · <a href="#installation">Installation</a> · <a href="../../CONTRIBUTING.md">Contribuer</a></p>
 
 <p align="center"><img src="../images/hero.png" alt="Dockyard" width="900"></p>
 

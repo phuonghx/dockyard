@@ -17,7 +17,7 @@ versions follow [Semantic Versioning](https://semver.org).
 - Docker, rootless Docker and Podman detection; clear "not running" and "no permission" screens.
 - Dark and light themes, bundled Geist fonts, keyboard focus, optional running count on the panel icon.
 - Translations (see `po/`) and a language picker: the 🌐 button in the popup and a Language setting, applied instantly; "Automatic" follows the system. READMEs in several languages under `docs/i18n/` with language buttons.
-- Website on GitHub Pages (English and Vietnamese) with Open Graph, Twitter card, JSON-LD, sitemap and hreflang; README banner.
+- Website on GitHub Pages, one page per language with a language selector with Open Graph, Twitter card, JSON-LD, sitemap and hreflang; README banner.
 - `tools/package.sh` and a release workflow that attach `dockyard-<version>.plasmoid` to every `v*` tag.
 - "Open on" setting to choose which tab the popup starts on.
 - Illustrated README (English and Vietnamese), contributor docs, CLA, issue and PR templates, CI.

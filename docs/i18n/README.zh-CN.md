@@ -15,7 +15,7 @@
 <h1 align="center">Dockyard</h1>
 <p align="center"><b>让每个容器井然有序。</b><br>一款快速、好看的<b>面向 Docker 和 Podman 的 KDE Plasma 6 小部件</b>：直接在面板上监控和管理容器、镜像、卷和日志。为 Fedora KDE 打造。</p>
 
-<p align="center"><a href="https://phuonghx.github.io/dockyard/"><b>网站</b></a> · <a href="#安装">安装</a> · <a href="../../CONTRIBUTING.md">参与贡献</a></p>
+<p align="center"><a href="https://phuonghx.github.io/dockyard/zh-CN/"><b>网站</b></a> · <a href="#安装">安装</a> · <a href="../../CONTRIBUTING.md">参与贡献</a></p>
 
 <p align="center"><img src="../images/hero.png" alt="Dockyard" width="900"></p>
 
