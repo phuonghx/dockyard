@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dockyard 1.0.0\n"
 "Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
-"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"POT-Creation-Date: 2026-11-26 18:14+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,6 +167,9 @@ msgid "Keep every container shipshape."
 msgstr ""
 
 msgid "Refresh now"
+msgstr ""
+
+msgid "Language"
 msgstr ""
 
 msgid "Configure Dockyard"
@@ -336,6 +339,9 @@ msgid "Restart all"
 msgstr ""
 
 msgid "Stop all"
+msgstr ""
+
+msgid "Automatic (system language)"
 msgstr ""
 
 msgid "Could not read logs."
@@ -564,6 +570,9 @@ msgstr ""
 
 msgctxt "relative time, years"
 msgid "%1y ago"
+msgstr ""
+
+msgid "Language:"
 msgstr ""
 
 msgid "Theme:"

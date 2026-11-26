@@ -5,6 +5,8 @@ import org.kde.kcmutils as KCM
 
 KCM.SimpleKCM {
     property string cfg_theme
+    property string cfg_language
+    property string cfg_languageDefault
     property string cfg_themeDefault
     property alias cfg_grouped: grouped.checked
     property alias cfg_defaultTab: tabBox.currentIndex
@@ -14,8 +16,16 @@ KCM.SimpleKCM {
     property bool cfg_groupedDefault
 
     readonly property var modes: ["auto", "dark", "light"]
+    readonly property var langCodes: ["auto", "en", "vi", "es", "fr", "de", "pt_BR", "ru", "ja", "zh_CN"]
 
     Kirigami.FormLayout {
+        QQC2.ComboBox {
+            id: langBox
+            Kirigami.FormData.label: i18n("Language:")
+            model: [i18n("Automatic (system language)"), "English", "Tiếng Việt", "Español", "Français", "Deutsch", "Português (Brasil)", "Русский", "日本語", "简体中文"]
+            currentIndex: Math.max(0, langCodes.indexOf(cfg_language))
+            onActivated: index => cfg_language = langCodes[index]
+        }
         QQC2.ComboBox {
             id: theme
             Kirigami.FormData.label: i18n("Theme:")

@@ -10,13 +10,13 @@ QQC2.AbstractButton {
     required property int running
     required property bool collapsed
     signal toggled(string group)
-    readonly property string title: label !== "" ? label : i18n("Standalone")
+    readonly property string title: label !== "" ? label : L10n.t("Standalone")
 
     width: ListView.view ? ListView.view.width : 400
     height: Theme.s(34)
     hoverEnabled: true
     onClicked: toggled(rid)
-    Accessible.name: title + ", " + i18n("%1/%2 running", running, count)
+    Accessible.name: title + ", " + L10n.t("%1/%2 running", running, count)
 
     readonly property var members: { Backend.revision; return Backend.containers.filter(c => (c.project || "") === h.rid) }
 
@@ -42,18 +42,18 @@ QQC2.AbstractButton {
         }
         Txt {
             anchors { left: title.right; leftMargin: Theme.s(8); verticalCenter: parent.verticalCenter }
-            text: i18n("%1/%2 running", h.running, h.count); kind: "tiny"; color: Theme.tx3; tnum: true
+            text: L10n.t("%1/%2 running", h.running, h.count); kind: "tiny"; color: Theme.tx3; tnum: true
         }
         Row {
             anchors { right: parent.right; verticalCenter: parent.verticalCenter }
             spacing: Theme.s(2)
             opacity: (h.hovered || startBtn.visualFocus || restartBtn.visualFocus || stopBtn.visualFocus) ? 1 : 0
             Behavior on opacity { NumberAnimation { duration: Theme.fast } }
-            IconButton { id: startBtn; symbol: "play"; tip: i18n("Start all"); width: Theme.s(26); height: width; glyphSize: Theme.s(13)
+            IconButton { id: startBtn; symbol: "play"; tip: L10n.t("Start all"); width: Theme.s(26); height: width; glyphSize: Theme.s(13)
                 visible: h.running < h.count; onClicked: Backend.act("start", h.members.filter(c => c.state !== "running").map(c => c.id)) }
-            IconButton { id: restartBtn; symbol: "restart"; tip: i18n("Restart all"); width: Theme.s(26); height: width; glyphSize: Theme.s(13)
+            IconButton { id: restartBtn; symbol: "restart"; tip: L10n.t("Restart all"); width: Theme.s(26); height: width; glyphSize: Theme.s(13)
                 visible: h.running > 0; onClicked: Backend.act("restart", h.members.filter(c => c.state === "running").map(c => c.id)) }
-            IconButton { id: stopBtn; symbol: "stop"; tip: i18n("Stop all"); width: Theme.s(26); height: width; glyphSize: Theme.s(13)
+            IconButton { id: stopBtn; symbol: "stop"; tip: L10n.t("Stop all"); width: Theme.s(26); height: width; glyphSize: Theme.s(13)
                 visible: h.running > 0; onClicked: Backend.act("stop", h.members.filter(c => c.state === "running").map(c => c.id)) }
         }
     }

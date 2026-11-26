@@ -72,26 +72,26 @@ Item {
     function noticeText(code, a, b) {
         switch (code) {
         case "acted": {
-            const who = b.charAt(0) === "#" ? i18np("%1 container", "%1 containers", parseInt(b.slice(1))) : b
+            const who = b.charAt(0) === "#" ? L10n.tn("%1 container", "%1 containers", parseInt(b.slice(1))) : b
             switch (a) {
-            case "start": return i18n("Started %1", who)
-            case "stop": return i18n("Stopped %1", who)
-            case "restart": return i18n("Restarted %1", who)
-            case "pause": return i18n("Paused %1", who)
-            case "unpause": return i18n("Resumed %1", who)
-            case "kill": return i18n("Killed %1", who)
-            default: return i18n("Removed %1", who)
+            case "start": return L10n.t("Started %1", who)
+            case "stop": return L10n.t("Stopped %1", who)
+            case "restart": return L10n.t("Restarted %1", who)
+            case "pause": return L10n.t("Paused %1", who)
+            case "unpause": return L10n.t("Resumed %1", who)
+            case "kill": return L10n.t("Killed %1", who)
+            default: return L10n.t("Removed %1", who)
             }
         }
-        case "act-failed": return i18n("That didn't work")
-        case "removed": return i18n("Removed %1", a)
-        case "remove-failed": return i18n("Could not remove %1", a)
-        case "reclaimed": return i18n("Reclaimed %1", a)
-        case "nothing-to-clean": return i18n("Nothing to clean")
-        case "prune-failed": return i18n("Cleanup failed")
-        case "starting-docker": return i18n("Asking systemd to start Docker…")
-        case "docker-up": return i18n("Docker is up")
-        case "docker-start-failed": return a ? i18n("Could not start Docker: %1", a) : i18n("Could not start Docker")
+        case "act-failed": return L10n.t("That didn't work")
+        case "removed": return L10n.t("Removed %1", a)
+        case "remove-failed": return L10n.t("Could not remove %1", a)
+        case "reclaimed": return L10n.t("Reclaimed %1", a)
+        case "nothing-to-clean": return L10n.t("Nothing to clean")
+        case "prune-failed": return L10n.t("Cleanup failed")
+        case "starting-docker": return L10n.t("Asking systemd to start Docker…")
+        case "docker-up": return L10n.t("Docker is up")
+        case "docker-start-failed": return a ? L10n.t("Could not start Docker: %1", a) : L10n.t("Could not start Docker")
         default: return a
         }
     }
@@ -100,14 +100,15 @@ Item {
     TextEdit { id: clip; visible: false }
     Connections {
         target: Backend
-        function onCopyRequested(text) { clip.text = text; clip.selectAll(); clip.copy(); toast.show(i18n("Copied to clipboard"), "ok") }
+        function onCopyRequested(text) { clip.text = text; clip.selectAll(); clip.copy(); toast.show(L10n.t("Copied to clipboard"), "ok") }
         function onToast(text, tone) { toast.show(text, tone) }
         function onNotice(code, a, b, tone) { toast.show(root.noticeText(code, a, b), tone) }
     }
     Timer { id: dfTimer; interval: 60000; repeat: true; running: root.visible; triggeredOnStart: true; onTriggered: Backend.fetchDf() }
 
     Shortcut { sequences: [StandardKey.Find]; enabled: root.visible; onActivated: search.focusField() }
-    Shortcut { sequence: "Escape"; enabled: logs.showing || prune.shown; onActivated: { if (prune.shown) prune.shown = false; else logs.showing = false } }
+    Shortcut { sequence: "Escape"; enabled: logs.showing || prune.shown || langMenu.shown
+        onActivated: { if (langMenu.shown) langMenu.shown = false; else if (prune.shown) prune.shown = false; else logs.showing = false } }
 
     // ------------------------------------------------------------ inline parts
     component TabBtn: QQC2.AbstractButton {
@@ -213,11 +214,12 @@ Item {
                 ColumnLayout {
                     spacing: Theme.s(1)
                     Txt { text: "Dockyard"; kind: "title"; strong: true }
-                    Txt { text: i18n("Keep every container shipshape."); kind: "tiny"; color: Theme.tx3 }
+                    Txt { text: L10n.t("Keep every container shipshape."); kind: "tiny"; color: Theme.tx3 }
                 }
                 Item { Layout.fillWidth: true }
-                IconButton { symbol: "refresh"; tip: i18n("Refresh now"); busy: Backend.refreshing && Backend.manual; onClicked: Backend.refresh(true) }
-                IconButton { symbol: "settings"; tip: i18n("Configure Dockyard")
+                IconButton { symbol: "refresh"; tip: L10n.t("Refresh now"); busy: Backend.refreshing && Backend.manual; onClicked: Backend.refresh(true) }
+                IconButton { symbol: "globe"; tip: L10n.t("Language"); onClicked: langMenu.shown = !langMenu.shown }
+                IconButton { symbol: "settings"; tip: L10n.t("Configure Dockyard")
                     onClicked: { const a = Plasmoid.internalAction("configure"); if (a) a.trigger() } }
             }
             Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 1; color: Theme.line }
@@ -237,17 +239,17 @@ Item {
                 spacing: Theme.s(20)
                 FleetMeter {
                     Layout.fillWidth: true; Layout.preferredWidth: 1
-                    label: i18n("CPU"); value: L.fmtCores(Backend.cpuCores * 100); unit: Backend.cpuCores === 1 ? i18nc("unit, singular", "core") : i18nc("unit, plural", "cores")
-                    note: i18n("of %1 available", Backend.engine.ncpu || "?")
+                    label: L10n.t("CPU"); value: L.fmtCores(Backend.cpuCores * 100); unit: Backend.cpuCores === 1 ? L10n.tc("unit, singular", "core") : L10n.tc("unit, plural", "cores")
+                    note: L10n.t("of %1 available", Backend.engine.ncpu || "?")
                     series: Backend.cpuHistory
                     ceiling: Math.max(0.2, Math.max.apply(null, Backend.cpuHistory.concat([0])) * 1.35)
                 }
                 Rectangle { Layout.preferredWidth: 1; Layout.preferredHeight: Theme.s(36); color: Theme.line }
                 FleetMeter {
                     Layout.fillWidth: true; Layout.preferredWidth: 1
-                    label: i18n("Memory")
+                    label: L10n.t("Memory")
                     value: L.fmtBytes(Backend.memUsed).split(" ")[0]; unit: L.fmtBytes(Backend.memUsed).split(" ")[1]
-                    note: i18n("of %1", L.fmtBytes(Backend.engine.memTotal || 0))
+                    note: L10n.t("of %1", L.fmtBytes(Backend.engine.memTotal || 0))
                     series: Backend.memHistory
                     ceiling: Math.max(1, Math.max.apply(null, Backend.memHistory.concat([0])) * 1.25)
                 }
@@ -262,13 +264,13 @@ Item {
             Flow {
                 Layout.fillWidth: true
                 spacing: Theme.s(6)
-                Token { text: i18nc("filter: containers that are running", "running"); tone: "run"; n: Backend.tally.running; current: root.tab === 0 && root.filter === "running"
+                Token { text: L10n.tc("filter: containers that are running", "running"); tone: "run"; n: Backend.tally.running; current: root.tab === 0 && root.filter === "running"
                         onClicked: { root.tab = 0; root.filter = root.filter === "running" ? "all" : "running" } }
-                Token { text: i18nc("filter: containers that need attention", "need attention"); tone: "bad"; n: Backend.tally.attention; visible: n > 0; current: root.tab === 0 && root.filter === "attention"
+                Token { text: L10n.tc("filter: containers that need attention", "need attention"); tone: "bad"; n: Backend.tally.attention; visible: n > 0; current: root.tab === 0 && root.filter === "attention"
                         onClicked: { root.tab = 0; root.filter = root.filter === "attention" ? "all" : "attention" } }
-                Token { text: i18nc("filter: containers that are stopped", "stopped"); tone: "idle"; n: Backend.tally.stopped; current: root.tab === 0 && root.filter === "stopped"
+                Token { text: L10n.tc("filter: containers that are stopped", "stopped"); tone: "idle"; n: Backend.tally.stopped; current: root.tab === 0 && root.filter === "stopped"
                         onClicked: { root.tab = 0; root.filter = root.filter === "stopped" ? "all" : "stopped" } }
-                Token { text: i18nc("filter: containers that are paused", "paused"); tone: "warn"; n: Backend.tally.paused; visible: n > 0; current: false; enabled: false }
+                Token { text: L10n.tc("filter: containers that are paused", "paused"); tone: "warn"; n: Backend.tally.paused; visible: n > 0; current: false; enabled: false }
             }
         }
 
@@ -284,10 +286,10 @@ Item {
             RowLayout {
                 Layout.fillWidth: true
                 spacing: Theme.s(2)
-                TabBtn { text: i18n("Containers"); symbol: "box"; count: Backend.containers.length; current: root.tab === 0; onClicked: root.tab = 0 }
-                TabBtn { text: i18n("Images"); symbol: "layers"; count: Backend.images.length; current: root.tab === 1; onClicked: root.tab = 1 }
-                TabBtn { text: i18n("Volumes"); symbol: "volume"; count: Backend.volumes.length; current: root.tab === 2; onClicked: root.tab = 2 }
-                TabBtn { text: i18n("Networks"); symbol: "network"; count: Backend.networks.length; current: root.tab === 3; onClicked: root.tab = 3 }
+                TabBtn { text: L10n.t("Containers"); symbol: "box"; count: Backend.containers.length; current: root.tab === 0; onClicked: root.tab = 0 }
+                TabBtn { text: L10n.t("Images"); symbol: "layers"; count: Backend.images.length; current: root.tab === 1; onClicked: root.tab = 1 }
+                TabBtn { text: L10n.t("Volumes"); symbol: "volume"; count: Backend.volumes.length; current: root.tab === 2; onClicked: root.tab = 2 }
+                TabBtn { text: L10n.t("Networks"); symbol: "network"; count: Backend.networks.length; current: root.tab === 3; onClicked: root.tab = 3 }
             }
             RowLayout {
                 Layout.fillWidth: true
@@ -296,18 +298,18 @@ Item {
                 SearchField {
                     id: search
                     Layout.fillWidth: true
-                    placeholder: [i18n("Search containers, images, ports"), i18n("Search images"), i18n("Search volumes"), i18n("Search networks")][root.tab]
+                    placeholder: [L10n.t("Search containers, images, ports"), L10n.t("Search images"), L10n.t("Search volumes"), L10n.t("Search networks")][root.tab]
                 }
                 IconButton {
                     visible: root.tab === 0
-                    symbol: "layers"; tip: root.grouped ? i18n("Grouped by Compose project") : i18n("Group by Compose project")
+                    symbol: "layers"; tip: root.grouped ? L10n.t("Grouped by Compose project") : L10n.t("Group by Compose project")
                     tone: root.grouped ? "accent" : "neutral"
                     implicitWidth: Theme.s(32); implicitHeight: Theme.s(32)
                     onClicked: Plasmoid.configuration.grouped = !root.grouped
                 }
                 IconButton {
                     visible: root.tab !== 0
-                    symbol: "trash"; tip: root.unusedOnly ? i18n("Showing unused only") : i18n("Show unused only")
+                    symbol: "trash"; tip: root.unusedOnly ? L10n.t("Showing unused only") : L10n.t("Show unused only")
                     tone: root.unusedOnly ? "accent" : "neutral"
                     implicitWidth: Theme.s(32); implicitHeight: Theme.s(32)
                     onClicked: root.unusedOnly = !root.unusedOnly
@@ -369,20 +371,20 @@ Item {
                 anchors.fill: parent
                 visible: Backend.loaded && Backend.errorKind === "" && [cModel, iModel, vModel, nModel][root.tab].count === 0
                 icon: root.query !== "" || root.filter !== "all" || root.unusedOnly ? "search" : ["box", "layers", "volume", "network"][root.tab]
-                title: root.query !== "" ? i18n("Nothing matches “%1”", root.query)
-                     : (root.tab === 0 && root.filter !== "all") ? i18n("No containers in this state")
-                     : root.unusedOnly ? i18n("Nothing unused. Tidy ship.")
-                     : root.tab === 0 ? i18n("The dockyard is empty")
-                     : [i18n("No containers here"), i18n("No images here"), i18n("No volumes here"), i18n("No networks here")][root.tab]
-                body: root.query !== "" || root.filter !== "all" || root.unusedOnly ? "" : root.tab === 0 ? i18n("Start a container and it will show up here.") : ""
+                title: root.query !== "" ? L10n.t("Nothing matches “%1”", root.query)
+                     : (root.tab === 0 && root.filter !== "all") ? L10n.t("No containers in this state")
+                     : root.unusedOnly ? L10n.t("Nothing unused. Tidy ship.")
+                     : root.tab === 0 ? L10n.t("The dockyard is empty")
+                     : [L10n.t("No containers here"), L10n.t("No images here"), L10n.t("No volumes here"), L10n.t("No networks here")][root.tab]
+                body: root.query !== "" || root.filter !== "all" || root.unusedOnly ? "" : root.tab === 0 ? L10n.t("Start a container and it will show up here.") : ""
                 IconButton {
                     visible: root.query !== "" || root.filter !== "all" || root.unusedOnly
-                    label: i18n("Clear filters"); symbol: "close"
+                    label: L10n.t("Clear filters"); symbol: "close"
                     onClicked: { search.text = ""; root.filter = "all"; root.unusedOnly = false }
                 }
                 IconButton {
                     visible: root.tab === 0 && root.query === "" && root.filter === "all"
-                    label: i18n("Copy a first command"); symbol: "copy"; solid: true
+                    label: L10n.t("Copy a first command"); symbol: "copy"; solid: true
                     onClicked: Backend.copy("docker run -d --name hello -p 8080:80 nginx")
                 }
             }
@@ -393,17 +395,17 @@ Item {
                 visible: Backend.loaded && Backend.errorKind !== ""
                 tone: Backend.errorKind === "not_running" ? "warn" : "bad"
                 icon: Backend.errorKind === "not_running" ? "power" : "warning"
-                title: Backend.errorKind === "not_running" ? i18n("Docker isn't running")
-                     : Backend.errorKind === "permission_denied" ? i18n("Dockyard can't reach Docker yet")
-                     : Backend.errorKind === "no_socket" ? i18n("No container engine found")
-                     : i18n("Something went wrong")
-                body: Backend.errorKind === "permission_denied" ? i18n("Your account isn't allowed to use the Docker socket. Add yourself to the docker group, then sign out and back in.")
-                    : Backend.errorKind === "not_running" ? i18n("The socket exists but nothing is answering. Start the engine and Dockyard will pick it up.")
-                    : Backend.errorKind === "no_socket" ? i18n("Install Docker or enable Podman's socket, then reopen this panel.")
-                    : (Backend.errorMessage || i18n("Dockyard could not run its helper. Make sure python3 is installed."))
-                IconButton { visible: Backend.errorKind === "not_running"; label: i18n("Start Docker"); symbol: "power"; solid: true; onClicked: Backend.startEngine() }
-                IconButton { visible: Backend.errorHint !== ""; label: i18n("Copy fix"); symbol: "copy"; onClicked: Backend.copy(Backend.errorHint) }
-                IconButton { label: i18n("Retry"); symbol: "refresh"; onClicked: Backend.refresh() }
+                title: Backend.errorKind === "not_running" ? L10n.t("Docker isn't running")
+                     : Backend.errorKind === "permission_denied" ? L10n.t("Dockyard can't reach Docker yet")
+                     : Backend.errorKind === "no_socket" ? L10n.t("No container engine found")
+                     : L10n.t("Something went wrong")
+                body: Backend.errorKind === "permission_denied" ? L10n.t("Your account isn't allowed to use the Docker socket. Add yourself to the docker group, then sign out and back in.")
+                    : Backend.errorKind === "not_running" ? L10n.t("The socket exists but nothing is answering. Start the engine and Dockyard will pick it up.")
+                    : Backend.errorKind === "no_socket" ? L10n.t("Install Docker or enable Podman's socket, then reopen this panel.")
+                    : (Backend.errorMessage || L10n.t("Dockyard could not run its helper. Make sure python3 is installed."))
+                IconButton { visible: Backend.errorKind === "not_running"; label: L10n.t("Start Docker"); symbol: "power"; solid: true; onClicked: Backend.startEngine() }
+                IconButton { visible: Backend.errorHint !== ""; label: L10n.t("Copy fix"); symbol: "copy"; onClicked: Backend.copy(Backend.errorHint) }
+                IconButton { label: L10n.t("Retry"); symbol: "refresh"; onClicked: Backend.refresh() }
             }
         }
 
@@ -418,18 +420,18 @@ Item {
                 spacing: Theme.s(8)
                 StatusDot { tone: Backend.errorKind !== "" ? "bad" : (Backend.loaded ? "run" : "idle"); size: Theme.s(8) }
                 Txt {
-                    text: Backend.errorKind !== "" ? i18n("Engine unreachable") : (Backend.engine.name ? Backend.engine.name + " " + Backend.engine.version : i18n("Connecting…"))
+                    text: Backend.errorKind !== "" ? L10n.t("Engine unreachable") : (Backend.engine.name ? Backend.engine.name + " " + Backend.engine.version : L10n.t("Connecting…"))
                     kind: "tiny"; color: Theme.tx2
                 }
                 Txt {
                     Layout.fillWidth: true
-                    text: (Backend.engine.rootless ? i18n("rootless") + " · " : "") + (Backend.engine.socket || "")
+                    text: (Backend.engine.rootless ? L10n.t("rootless") + " · " : "") + (Backend.engine.socket || "")
                     kind: "monoSm"; color: Theme.tx3; elide: Text.ElideMiddle
                 }
                 IconButton {
                     visible: Backend.loaded && Backend.errorKind === ""
                     symbol: "broom"
-                    label: Backend.df ? i18n("Free up %1", L.fmtBytes(Backend.df.imagesReclaimable + Backend.df.containersReclaimable + Backend.df.cacheReclaimable)) : i18n("Free up space")
+                    label: Backend.df ? L10n.t("Free up %1", L.fmtBytes(Backend.df.imagesReclaimable + Backend.df.containersReclaimable + Backend.df.cacheReclaimable)) : L10n.t("Free up space")
                     onClicked: prune.shown = true
                 }
             }
@@ -438,6 +440,7 @@ Item {
 
     // ------------------------------------------------------------------ overlays
     PrunePanel { id: prune; anchors.fill: parent; onDismissed: shown = false }
+    LangMenu { id: langMenu; anchors.fill: parent; onDismissed: shown = false }
 
     LogsPage {
         id: logs

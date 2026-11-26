@@ -13,10 +13,10 @@ PlasmoidItem {
     Plasmoid.status: Backend.tally.attention > 0 ? PlasmaCore.Types.NeedsAttentionStatus : PlasmaCore.Types.ActiveStatus
     Tr { id: tr }
     toolTipMainText: "Dockyard"
-    toolTipSubText: Backend.errorKind !== "" ? i18n("Engine unreachable")
-                  : !Backend.loaded ? i18n("Connecting…")
-                  : i18n("%1 running · %2 stopped", Backend.tally.running, Backend.tally.stopped)
-                    + (Backend.tally.attention > 0 ? " · " + i18n("%1 need attention", Backend.tally.attention) : "")
+    toolTipSubText: Backend.errorKind !== "" ? L10n.t("Engine unreachable")
+                  : !Backend.loaded ? L10n.t("Connecting…")
+                  : L10n.t("%1 running · %2 stopped", Backend.tally.running, Backend.tally.stopped)
+                    + (Backend.tally.attention > 0 ? " · " + L10n.t("%1 need attention", Backend.tally.attention) : "")
 
     compactRepresentation: Compact { onToggle: root.expanded = !root.expanded }
     fullRepresentation: Full {}
@@ -27,6 +27,7 @@ PlasmoidItem {
     Binding { target: Backend; property: "terminal"; value: root.cfg.terminal }
     Binding { target: Backend; property: "notify"; value: root.cfg.notifications }
     Binding { target: Theme; property: "mode"; value: root.cfg.theme }
+    Binding { target: L10n; property: "lang"; value: root.cfg.language }
     Binding { target: Theme; property: "sysLightness"; value: Kirigami.Theme.backgroundColor.hslLightness }
     Binding { target: Theme; property: "unit"; value: Math.max(0.85, Kirigami.Units.gridUnit / 18) }
 
@@ -55,14 +56,14 @@ PlasmoidItem {
             if (!root.cfg.notifications) return
             const st = L.statusInfo(c)
             let title, body = c.image
-            if (kind === "crashed") { title = i18n("%1 stopped unexpectedly", c.name); body = tr.status(st) + " · " + c.image }
-            else if (kind === "unhealthy") { title = i18n("%1 is unhealthy", c.name); body = i18n("Health checks are failing") + " · " + c.image }
-            else title = i18n("%1 is restart-looping", c.name)
+            if (kind === "crashed") { title = L10n.t("%1 stopped unexpectedly", c.name); body = tr.status(st) + " · " + c.image }
+            else if (kind === "unhealthy") { title = L10n.t("%1 is unhealthy", c.name); body = L10n.t("Health checks are failing") + " · " + c.image }
+            else title = L10n.t("%1 is restart-looping", c.name)
             notification.createObject(root, { title: title, body: body })
         }
     }
 
     Plasmoid.contextualActions: [
-        PlasmaCore.Action { text: i18n("Refresh now"); icon.name: "view-refresh"; onTriggered: Backend.refresh() }
+        PlasmaCore.Action { text: L10n.t("Refresh now"); icon.name: "view-refresh"; onTriggered: Backend.refresh() }
     ]
 }

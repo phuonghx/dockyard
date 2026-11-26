@@ -58,8 +58,11 @@ tools/i18n.sh check           # no fuzzy, empty or broken entries
 - Keep placeholders such as `%1` and `%2` exactly as they are. They are filled in at run time.
 - Read the context in the comments of the `.pot` file. For example *Paused* appears as a container state and as a log state.
 - Keep short durations compact (`3d`, `9h`); use your language's usual abbreviations.
-- If you change or add UI text in the code, always wrap it in `i18n("...")`, then run `tools/i18n.sh all`.
-- Singletons and `logic.js` cannot reach the catalogue: they emit codes and the UI (`Tr.qml`, `Full.qml`) turns them into words.
+- If you change or add UI text in the code, always wrap it in `L10n.t("...")` (or `L10n.tc` for a context, `L10n.tn` for plurals), then run `tools/i18n.sh all`. Settings pages use `i18n("...")`.
+- The widget lets users pick a language at run time, so it reads `package/contents/ui/translations.js`, generated from `po/` by `tools/po2js.py` (done by `tools/i18n.sh compile`). Commit it with your `.po` change.
+- Singletons and `logic.js` do not write words: they emit codes and the UI (`Tr.qml`, `Full.qml`) turns them into text.
+- A new language shows up in the picker by adding its code to `codes`/`names` in `L10n.qml` and to the list in `ConfigAppearance.qml`.
+- READMEs in other languages live in `docs/i18n/README.<lang>.md`; the language buttons at the top of each README link them.
 
 ## Code style
 - Python: stdlib only, type hints where they help, no traceback ever reaches the widget (errors become JSON).

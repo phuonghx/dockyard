@@ -16,7 +16,7 @@ versions follow [Semantic Versioning](https://semver.org).
 - Desktop notifications for crashes, failing health checks and restart loops.
 - Docker, rootless Docker and Podman detection; clear "not running" and "no permission" screens.
 - Dark and light themes, bundled Geist fonts, keyboard focus, optional running count on the panel icon.
-- Translations: Tiếng Việt, Español, Français, Deutsch, Português (Brasil), Русский, 日本語, 简体中文, via gettext (`po/`, `tools/i18n.sh`).
+- Translations (see `po/`) and a language picker: the 🌐 button in the popup and a Language setting, applied instantly; "Automatic" follows the system. READMEs in several languages under `docs/i18n/` with language buttons.
 - Website on GitHub Pages (English and Vietnamese) with Open Graph, Twitter card, JSON-LD, sitemap and hreflang; README banner.
 - "Open on" setting to choose which tab the popup starts on.
 - Illustrated README (English and Vietnamese), contributor docs, CLA, issue and PR templates, CI.

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dockyard 1.0.0\n"
 "Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
-"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"POT-Creation-Date: 2026-11-26 18:14+0700\n"
 "PO-Revision-Date: 2026-11-26 12:00+0700\n"
 "Last-Translator: Dockyard translators\n"
 "Language-Team: 日本語\n"
@@ -163,6 +163,9 @@ msgstr "すべてのコンテナーを整然と。"
 
 msgid "Refresh now"
 msgstr "今すぐ更新"
+
+msgid "Language"
+msgstr "言語"
 
 msgid "Configure Dockyard"
 msgstr "Dockyard を設定"
@@ -340,6 +343,9 @@ msgstr "すべて再起動"
 
 msgid "Stop all"
 msgstr "すべて停止"
+
+msgid "Automatic (system language)"
+msgstr "自動（システムの言語）"
 
 msgid "Could not read logs."
 msgstr "ログを読み取れませんでした。"
@@ -570,6 +576,9 @@ msgstr "%1か月前"
 msgctxt "relative time, years"
 msgid "%1y ago"
 msgstr "%1年前"
+
+msgid "Language:"
+msgstr "言語:"
 
 msgid "Theme:"
 msgstr "テーマ:"

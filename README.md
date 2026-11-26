@@ -4,14 +4,25 @@
 <p align="center"><b>Keep every container shipshape.</b><br>
 A fast, good-looking <b>KDE Plasma 6 widget for Docker and Podman</b>: watch and manage containers, images, volumes and logs right from your panel. Made for Fedora KDE.</p>
 
-<p align="center"><a href="https://phuonghx.github.io/dockyard/"><b>Website</b></a> · <a href="#install">Install</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
+<p align="center">
+<a href="README.md"><img alt="English" src="https://img.shields.io/badge/-English-4b5b70?style=flat-square"></a>
+<a href="docs/i18n/README.vi.md"><img alt="Tiếng Việt" src="https://img.shields.io/badge/-Ti%E1%BA%BFng%20Vi%E1%BB%87t-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.es.md"><img alt="Español" src="https://img.shields.io/badge/-Espa%C3%B1ol-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.fr.md"><img alt="Français" src="https://img.shields.io/badge/-Fran%C3%A7ais-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.de.md"><img alt="Deutsch" src="https://img.shields.io/badge/-Deutsch-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.pt-BR.md"><img alt="Português (Brasil)" src="https://img.shields.io/badge/-Portugu%C3%AAs%20(Brasil)-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.ru.md"><img alt="Русский" src="https://img.shields.io/badge/-%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.ja.md"><img alt="日本語" src="https://img.shields.io/badge/-%E6%97%A5%E6%9C%AC%E8%AA%9E-2dd4bf?style=flat-square"></a>
+<a href="docs/i18n/README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-2dd4bf?style=flat-square"></a>
+</p>
+
+<p align="center"><a href="https://phuonghx.github.io/dockyard/"><b>Website</b></a> · <a href="#install">Install</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
 
 <p align="center">
   <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-2dd4bf"></a>
   <img alt="Plasma 6" src="https://img.shields.io/badge/KDE_Plasma-6-1d99f3">
   <img alt="Fedora" src="https://img.shields.io/badge/Fedora-KDE-51a2da">
-  <a href="README.vi.md"><img alt="Tiếng Việt" src="https://img.shields.io/badge/docs-Ti%E1%BA%BFng_Vi%E1%BB%87t-f5b544"></a>
-</p>
+  </p>
 
 <p align="center"><img src="docs/images/hero.png" alt="Dockyard in dark and light themes, and the Images tab"></p>
 
@@ -80,10 +91,9 @@ Plain language and the exact fix, instead of a stack trace.
 <p align="center"><img src="docs/images/error-not-running.png" width="240" alt="Docker is not running"> <img src="docs/images/error-permission.png" width="240" alt="No permission"> <img src="docs/images/error-no-engine.png" width="240" alt="No engine found"> <img src="docs/images/empty.png" width="240" alt="Empty state"></p>
 
 ## Speaks your language
-Dockyard follows your system language automatically. Included: **English, Tiếng Việt, Español, Français, Deutsch, Português (Brasil), Русский, 日本語, 简体中文**.
-Machine-checked for completeness (every message is translated in every language), written to read naturally rather than word for word.
+Dockyard follows your system language, and you can pick another one at any time with the 🌐 button in the popup (or in the widget settings). The change applies instantly. The languages available are the ones in [`po/`](po/); each is shown in its own name so you can always find yours.
 
-<p align="center"><img src="docs/images/languages.png" alt="Dockyard in Vietnamese, German, Russian and Japanese" width="860"></p>
+<p align="center"><img src="docs/images/languages.png" alt="Dockyard shown in several languages" width="860"></p>
 
 Want another language, or a better phrase? It takes one file and no code. See [Translating](CONTRIBUTING.md#translating).
 
@@ -96,6 +106,7 @@ Right-click the widget → **Configure Dockyard**.
 | Refresh while open / in background | 4 s / 20 s | Background refresh is quiet and cheap. |
 | Container CLI, terminal command | `docker`, `konsole -e` | Used for **Shell**. |
 | Notifications | on | Crashes, failing health checks, restart loops. |
+| Language | automatic | Follow the system, or pick one. Also on the 🌐 button in the popup. |
 | Theme | follow Plasma | Or always dark / always light. |
 | Open on | Containers | Which tab the popup opens on. |
 | Group by Compose project | on | |

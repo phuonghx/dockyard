@@ -1,5 +1,6 @@
 singleton Theme 1.0 Theme.qml
 singleton Backend 1.0 Backend.qml
+singleton L10n 1.0 L10n.qml
 Chip 1.0 Chip.qml
 Compact 1.0 Compact.qml
 ContainerRow 1.0 ContainerRow.qml
@@ -23,3 +24,4 @@ ThemedScrollBar 1.0 ThemedScrollBar.qml
 Toast 1.0 Toast.qml
 Txt 1.0 Txt.qml
 Tr 1.0 Tr.qml
+LangMenu 1.0 LangMenu.qml

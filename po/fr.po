@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dockyard 1.0.0\n"
 "Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
-"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"POT-Creation-Date: 2026-11-26 18:14+0700\n"
 "PO-Revision-Date: 2026-11-26 12:00+0700\n"
 "Last-Translator: Dockyard translators\n"
 "Language-Team: Français\n"
@@ -165,6 +165,9 @@ msgstr "Gardez chaque conteneur en bon ordre."
 
 msgid "Refresh now"
 msgstr "Actualiser maintenant"
+
+msgid "Language"
+msgstr "Langue"
 
 msgid "Configure Dockyard"
 msgstr "Configurer Dockyard"
@@ -340,6 +343,9 @@ msgstr "Tout redémarrer"
 
 msgid "Stop all"
 msgstr "Tout arrêter"
+
+msgid "Automatic (system language)"
+msgstr "Automatique (langue du système)"
 
 msgid "Could not read logs."
 msgstr "Impossible de lire les journaux."
@@ -570,6 +576,9 @@ msgstr "il y a %1 mois"
 msgctxt "relative time, years"
 msgid "%1y ago"
 msgstr "il y a %1 an"
+
+msgid "Language:"
+msgstr "Langue :"
 
 msgid "Theme:"
 msgstr "Thème :"

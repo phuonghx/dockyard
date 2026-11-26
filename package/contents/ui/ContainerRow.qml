@@ -83,7 +83,7 @@ Item {
                 anchors.fill: parent
                 focusPolicy: Qt.StrongFocus
                 Accessible.name: (row.c ? row.c.name : "") + ", " + tr.status(row.st)
-                Accessible.description: row.expanded ? i18n("Expanded") : i18n("Collapsed")
+                Accessible.description: row.expanded ? L10n.t("Expanded") : L10n.t("Collapsed")
                 onClicked: Backend.expandedId = row.expanded ? "" : row.rid
                 background: Rectangle {
                     radius: Theme.s(10); color: "transparent"
@@ -120,7 +120,7 @@ Item {
                                 required property var modelData
                                 text: ":" + modelData.pub; mono: true; clickable: true
                                 height: Theme.s(16)
-                                tip: L.isWebPort(modelData.pub) ? i18n("Open http://localhost:%1", modelData.pub) : i18n("Copy localhost:%1", modelData.pub)
+                                tip: L.isWebPort(modelData.pub) ? L10n.t("Open http://localhost:%1", modelData.pub) : L10n.t("Copy localhost:%1", modelData.pub)
                                 onClicked: row.openPort(modelData)
                             }
                         }
@@ -161,8 +161,8 @@ Item {
                     opacity: row.engaged ? 1 : 0
                     visible: opacity > 0.01
                     Behavior on opacity { NumberAnimation { duration: Theme.fast } }
-                    IconButton { id: logsBtn; symbol: "logs"; tip: i18n("Logs"); onClicked: row.showLogs(row.rid) }
-                    IconButton { id: restartBtn; symbol: "restart"; tip: i18n("Restart"); enabled: !row.busyAction
+                    IconButton { id: logsBtn; symbol: "logs"; tip: L10n.t("Logs"); onClicked: row.showLogs(row.rid) }
+                    IconButton { id: restartBtn; symbol: "restart"; tip: L10n.t("Restart"); enabled: !row.busyAction
                         visible: row.running || row.paused || (row.c && row.c.state === "restarting")
                         busy: row.busyAction === "restart"
                         onClicked: Backend.act("restart", [row.rid]) }
@@ -175,7 +175,7 @@ Item {
                     tone: "accent"
                     busy: row.busyAction === "start" || row.busyAction === "stop"
                     enabled: !row.busyAction
-                    tip: symbol === "stop" ? i18n("Stop") : i18n("Start")
+                    tip: symbol === "stop" ? L10n.t("Stop") : L10n.t("Start")
                     onClicked: Backend.act(symbol === "stop" ? "stop" : "start", [row.rid])
                 }
             }
@@ -202,11 +202,11 @@ Item {
                     visible: row.running
                     Layout.fillWidth: true
                     spacing: Theme.s(16)
-                    Meter { Layout.fillWidth: true; label: i18n("CPU"); value: row.c ? L.fmtPct(row.c.cpu) : ""
+                    Meter { Layout.fillWidth: true; label: L10n.t("CPU"); value: row.c ? L.fmtPct(row.c.cpu) : ""
                             fraction: row.c ? row.c.cpu / 100 / Math.max(1, (Backend.engine.ncpu || 1) / 4) : 0 }
-                    Meter { Layout.fillWidth: true; label: i18n("Memory"); value: row.c ? L.fmtBytes(row.c.mem) : ""
+                    Meter { Layout.fillWidth: true; label: L10n.t("Memory"); value: row.c ? L.fmtBytes(row.c.mem) : ""
                             fraction: row.c && row.c.memLimit ? row.c.mem / row.c.memLimit : 0 }
-                    Meter { Layout.fillWidth: true; label: i18n("Network ↓ ↑"); value: row.c ? L.fmtBytes(row.c.netRx) + " · " + L.fmtBytes(row.c.netTx) : ""; fraction: 0 }
+                    Meter { Layout.fillWidth: true; label: L10n.t("Network ↓ ↑"); value: row.c ? L.fmtBytes(row.c.netRx) + " · " + L.fmtBytes(row.c.netTx) : ""; fraction: 0 }
                 }
 
                 GridLayout {
@@ -215,13 +215,13 @@ Item {
                     columnSpacing: Theme.s(14)
                     rowSpacing: Theme.s(7)
 
-                    Txt { text: i18n("Image"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
+                    Txt { text: L10n.t("Image"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
                     Txt { Layout.fillWidth: true; text: row.c ? row.c.image : ""; kind: "monoSm"; color: Theme.tx2; elide: Text.ElideMiddle }
 
-                    Txt { visible: !!row.c && row.c.project !== ""; text: i18n("Compose"); kind: "tiny"; color: Theme.tx3 }
+                    Txt { visible: !!row.c && row.c.project !== ""; text: L10n.t("Compose"); kind: "tiny"; color: Theme.tx3 }
                     Txt { visible: !!row.c && row.c.project !== ""; Layout.fillWidth: true; text: row.c ? row.c.project + " / " + row.c.service : ""; kind: "small"; color: Theme.tx2; elide: Text.ElideRight }
 
-                    Txt { visible: !!row.c && row.c.ports.length > 0; text: i18n("Ports"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
+                    Txt { visible: !!row.c && row.c.ports.length > 0; text: L10n.t("Ports"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
                     Flow {
                         visible: !!row.c && row.c.ports.length > 0
                         Layout.fillWidth: true
@@ -232,13 +232,13 @@ Item {
                                 required property var modelData
                                 text: modelData.pub + " → " + modelData.priv + "/" + modelData.proto
                                 mono: true; clickable: true; glyph: L.isWebPort(modelData.pub) ? "external" : "copy"
-                                tip: L.isWebPort(modelData.pub) ? i18n("Open in browser") : i18n("Copy address")
+                                tip: L.isWebPort(modelData.pub) ? L10n.t("Open in browser") : L10n.t("Copy address")
                                 onClicked: row.openPort(modelData)
                             }
                         }
                     }
 
-                    Txt { visible: !!row.info && row.info.networks.length > 0; text: i18n("Network"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
+                    Txt { visible: !!row.info && row.info.networks.length > 0; text: L10n.t("Network"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
                     Column {
                         visible: !!row.info && row.info.networks.length > 0
                         Layout.fillWidth: true
@@ -249,7 +249,7 @@ Item {
                         }
                     }
 
-                    Txt { visible: !!row.info && row.info.mounts.length > 0; text: i18n("Mounts"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
+                    Txt { visible: !!row.info && row.info.mounts.length > 0; text: L10n.t("Mounts"); kind: "tiny"; color: Theme.tx3; Layout.alignment: Qt.AlignTop }
                     Column {
                         visible: !!row.info && row.info.mounts.length > 0
                         Layout.fillWidth: true
@@ -265,24 +265,24 @@ Item {
                         }
                     }
 
-                    Txt { visible: !!row.info; text: i18n("Policy"); kind: "tiny"; color: Theme.tx3 }
-                    Txt { visible: !!row.info; text: row.info ? row.info.restartPolicy + (row.info.restarts ? " · " + i18np("restarted %1 time", "restarted %1 times", row.info.restarts) : "") : ""; kind: "small"; color: Theme.tx2 }
+                    Txt { visible: !!row.info; text: L10n.t("Policy"); kind: "tiny"; color: Theme.tx3 }
+                    Txt { visible: !!row.info; text: row.info ? row.info.restartPolicy + (row.info.restarts ? " · " + L10n.tn("restarted %1 time", "restarted %1 times", row.info.restarts) : "") : ""; kind: "small"; color: Theme.tx2 }
 
-                    Txt { text: i18n("ID"); kind: "tiny"; color: Theme.tx3 }
-                    Chip { text: row.c ? row.c.short : ""; mono: true; clickable: true; glyph: "copy"; tip: i18n("Copy full ID"); onClicked: Backend.copy(row.c.id) }
+                    Txt { text: L10n.t("ID"); kind: "tiny"; color: Theme.tx3 }
+                    Chip { text: row.c ? row.c.short : ""; mono: true; clickable: true; glyph: "copy"; tip: L10n.t("Copy full ID"); onClicked: Backend.copy(row.c.id) }
                 }
 
                 Flow {
                     Layout.fillWidth: true
                     spacing: Theme.s(6)
-                    IconButton { symbol: "logs"; label: i18n("Logs"); onClicked: row.showLogs(row.rid) }
-                    IconButton { symbol: "terminal"; label: i18n("Shell"); visible: row.running; onClicked: Backend.openTerminal(row.rid) }
-                    IconButton { symbol: row.paused ? "play" : "pause"; label: row.paused ? i18n("Resume") : i18n("Pause"); visible: row.running || row.paused
+                    IconButton { symbol: "logs"; label: L10n.t("Logs"); onClicked: row.showLogs(row.rid) }
+                    IconButton { symbol: "terminal"; label: L10n.t("Shell"); visible: row.running; onClicked: Backend.openTerminal(row.rid) }
+                    IconButton { symbol: row.paused ? "play" : "pause"; label: row.paused ? L10n.t("Resume") : L10n.t("Pause"); visible: row.running || row.paused
                         enabled: !row.busyAction; onClicked: Backend.act(row.paused ? "unpause" : "pause", [row.rid]) }
-                    IconButton { symbol: "bolt"; label: row.armed === "kill" ? i18n("Kill now?") : i18n("Kill"); visible: row.running; armed: row.armed === "kill"
+                    IconButton { symbol: "bolt"; label: row.armed === "kill" ? L10n.t("Kill now?") : L10n.t("Kill"); visible: row.running; armed: row.armed === "kill"
                         tone: "danger"; enabled: !row.busyAction
                         onClicked: { if (row.armed === "kill") { row.armed = ""; Backend.act("kill", [row.rid]) } else row.arm("kill") } }
-                    IconButton { symbol: "trash"; label: row.armed === "rm" ? i18n("Remove for good?") : i18n("Remove"); armed: row.armed === "rm"
+                    IconButton { symbol: "trash"; label: row.armed === "rm" ? L10n.t("Remove for good?") : L10n.t("Remove"); armed: row.armed === "rm"
                         tone: "danger"; enabled: !row.busyAction
                         onClicked: { if (row.armed === "rm") { row.armed = ""; Backend.act("rm", [row.rid]) } else row.arm("rm") } }
                 }
