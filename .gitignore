@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.rpm
+.idea/
+.vscode/
+.claude/
+.knowns/
+*.swp
+.DS_Store

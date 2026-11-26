@@ -1,0 +1,24 @@
+singleton Theme 1.0 Theme.qml
+singleton Backend 1.0 Backend.qml
+Chip 1.0 Chip.qml
+Compact 1.0 Compact.qml
+ContainerRow 1.0 ContainerRow.qml
+EmptyState 1.0 EmptyState.qml
+Full 1.0 Full.qml
+Glyph 1.0 Glyph.qml
+GroupHeader 1.0 GroupHeader.qml
+IconButton 1.0 IconButton.qml
+LogsPage 1.0 LogsPage.qml
+Manifest 1.0 Manifest.qml
+Mark 1.0 Mark.qml
+Meter 1.0 Meter.qml
+Notifier 1.0 Notifier.qml
+PrunePanel 1.0 PrunePanel.qml
+ResourceRow 1.0 ResourceRow.qml
+SearchField 1.0 SearchField.qml
+Skeleton 1.0 Skeleton.qml
+Sparkline 1.0 Sparkline.qml
+StatusDot 1.0 StatusDot.qml
+ThemedScrollBar 1.0 ThemedScrollBar.qml
+Toast 1.0 Toast.qml
+Txt 1.0 Txt.qml

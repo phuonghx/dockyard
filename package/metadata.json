@@ -1,0 +1,30 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Id": "io.dockyard.widget",
+    "Name": "Dockyard",
+    "Description": "Keep every container shipshape. Monitor and manage Docker and Podman from your panel.",
+    "Icon": "dockyard",
+    "Category": "System Information",
+    "Version": "1.0.0",
+    "License": "MIT",
+    "Authors": [
+      {
+        "Name": "Xuan-Phuong Hoang",
+        "Email": "phuonghx.me@gmail.com"
+      }
+    ],
+    "EnabledByDefault": true,
+    "FormFactors": [
+      "desktop",
+      "tablet",
+      "handset"
+    ],
+    "Website": "https://github.com/phuonghx/dockyard",
+    "BugReportUrl": "https://github.com/phuonghx/dockyard/issues"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "X-KDE-Keywords": "docker,podman,container,compose,images,volumes,logs",
+  "X-Plasma-NotificationArea": "true",
+  "X-Plasma-NotificationAreaCategory": "SystemServices"
+}
