@@ -38,6 +38,8 @@ git clone https://github.com/phuonghx/dockyard
 cd dockyard
 ./install.sh --restart      # per-user, no root. --restart reloads plasmashell
 ```
+No terminal? Download `dockyard-<version>.plasmoid` from [Releases](https://github.com/phuonghx/dockyard/releases) and use **Add Widgets → Get New Widgets → Install Widget From Local File…**, or `kpackagetool6 -t Plasma/Applet -i dockyard-<version>.plasmoid`.
+
 Then **right-click your panel → Add Widgets → Dockyard** and drag it in. To try it first in its own window:
 `plasmawindowed io.dockyard.widget`.
 
