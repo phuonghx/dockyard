@@ -1,0 +1,638 @@
+# Русский translation of Dockyard.
+# Copyright (C) 2026 Xuan-Phuong Hoang
+# This file is distributed under the same license as the Dockyard package.
+msgid ""
+msgstr ""
+"Project-Id-Version: dockyard 1.0.0\n"
+"Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
+"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"PO-Revision-Date: 2026-11-26 12:00+0700\n"
+"Last-Translator: Dockyard translators\n"
+"Language-Team: Русский\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Expanded"
+msgstr "Развёрнуто"
+
+msgid "Collapsed"
+msgstr "Свёрнуто"
+
+msgid "Open http://localhost:%1"
+msgstr "Открыть http://localhost:%1"
+
+msgid "Copy localhost:%1"
+msgstr "Копировать localhost:%1"
+
+msgid "Logs"
+msgstr "Журнал"
+
+msgid "Restart"
+msgstr "Перезапустить"
+
+msgid "Stop"
+msgstr "Остановить"
+
+msgid "Start"
+msgstr "Запустить"
+
+msgid "CPU"
+msgstr "ЦП"
+
+msgid "Memory"
+msgstr "Память"
+
+msgid "Network ↓ ↑"
+msgstr "Сеть ↓ ↑"
+
+msgid "Image"
+msgstr "Образ"
+
+msgid "Compose"
+msgstr "Compose"
+
+msgid "Ports"
+msgstr "Порты"
+
+msgid "Open in browser"
+msgstr "Открыть в браузере"
+
+msgid "Copy address"
+msgstr "Копировать адрес"
+
+msgid "Network"
+msgstr "Сеть"
+
+msgid "Mounts"
+msgstr "Тома (монтирование)"
+
+msgid "Policy"
+msgstr "Политика"
+
+msgid "restarted %1 time"
+msgid_plural "restarted %1 times"
+msgstr[0] "перезапущен %1 раз"
+msgstr[1] "перезапущен %1 раза"
+msgstr[2] "перезапущен %1 раз"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Copy full ID"
+msgstr "Копировать полный ID"
+
+msgid "Shell"
+msgstr "Оболочка"
+
+msgid "Resume"
+msgstr "Возобновить"
+
+msgid "Pause"
+msgstr "Приостановить"
+
+msgid "Kill now?"
+msgstr "Принудительно сейчас?"
+
+msgid "Kill"
+msgstr "Принудительно остановить"
+
+msgid "Remove for good?"
+msgstr "Удалить навсегда?"
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "%1 container"
+msgid_plural "%1 containers"
+msgstr[0] "%1 контейнер"
+msgstr[1] "%1 контейнера"
+msgstr[2] "%1 контейнеров"
+
+msgid "Started %1"
+msgstr "%1 запущен"
+
+msgid "Stopped %1"
+msgstr "%1 остановлен"
+
+msgid "Restarted %1"
+msgstr "%1 перезапущен"
+
+msgid "Paused %1"
+msgstr "%1 приостановлен"
+
+msgid "Resumed %1"
+msgstr "%1 возобновлён"
+
+msgid "Killed %1"
+msgstr "%1 принудительно остановлен"
+
+msgid "Removed %1"
+msgstr "%1 удалён"
+
+msgid "That didn't work"
+msgstr "Не получилось"
+
+msgid "Could not remove %1"
+msgstr "Не удалось удалить %1"
+
+msgid "Reclaimed %1"
+msgstr "Освобождено %1"
+
+msgid "Nothing to clean"
+msgstr "Нечего очищать"
+
+msgid "Cleanup failed"
+msgstr "Очистка не удалась"
+
+msgid "Asking systemd to start Docker…"
+msgstr "Просим systemd запустить Docker…"
+
+msgid "Docker is up"
+msgstr "Docker запущен"
+
+msgid "Could not start Docker: %1"
+msgstr "Не удалось запустить Docker: %1"
+
+msgid "Could not start Docker"
+msgstr "Не удалось запустить Docker"
+
+msgid "Copied to clipboard"
+msgstr "Скопировано в буфер обмена"
+
+msgid "Keep every container shipshape."
+msgstr "Держите каждый контейнер в порядке."
+
+msgid "Refresh now"
+msgstr "Обновить сейчас"
+
+msgid "Configure Dockyard"
+msgstr "Настроить Dockyard"
+
+msgctxt "unit, singular"
+msgid "core"
+msgstr "ядро"
+
+msgctxt "unit, plural"
+msgid "cores"
+msgstr "ядер"
+
+msgid "of %1 available"
+msgstr "из %1 доступно"
+
+msgid "of %1"
+msgstr "из %1"
+
+msgctxt "filter: containers that are running"
+msgid "running"
+msgstr "работают"
+
+msgctxt "filter: containers that need attention"
+msgid "need attention"
+msgstr "требуют внимания"
+
+msgctxt "filter: containers that are stopped"
+msgid "stopped"
+msgstr "остановлены"
+
+msgctxt "filter: containers that are paused"
+msgid "paused"
+msgstr "на паузе"
+
+msgid "Containers"
+msgstr "Контейнеры"
+
+msgid "Images"
+msgstr "Образы"
+
+msgid "Volumes"
+msgstr "Тома"
+
+msgid "Networks"
+msgstr "Сети"
+
+msgid "Search containers, images, ports"
+msgstr "Поиск контейнеров, образов, портов"
+
+msgid "Search images"
+msgstr "Поиск образов"
+
+msgid "Search volumes"
+msgstr "Поиск томов"
+
+msgid "Search networks"
+msgstr "Поиск сетей"
+
+msgid "Grouped by Compose project"
+msgstr "Сгруппировано по проектам Compose"
+
+msgid "Group by Compose project"
+msgstr "Группировать по проектам Compose"
+
+msgid "Showing unused only"
+msgstr "Показаны только неиспользуемые"
+
+msgid "Show unused only"
+msgstr "Показать только неиспользуемые"
+
+msgid "Nothing matches “%1”"
+msgstr "Ничего не найдено по запросу «%1»"
+
+msgid "No containers in this state"
+msgstr "Нет контейнеров в этом состоянии"
+
+msgid "Nothing unused. Tidy ship."
+msgstr "Неиспользуемого нет. Корабль в порядке."
+
+msgid "The dockyard is empty"
+msgstr "Верфь пуста"
+
+msgid "No containers here"
+msgstr "Нет контейнеров"
+
+msgid "No images here"
+msgstr "Нет образов"
+
+msgid "No volumes here"
+msgstr "Нет томов"
+
+msgid "No networks here"
+msgstr "Нет сетей"
+
+msgid "Start a container and it will show up here."
+msgstr "Запустите контейнер, и он появится здесь."
+
+msgid "Clear filters"
+msgstr "Сбросить фильтры"
+
+msgid "Copy a first command"
+msgstr "Скопировать первую команду"
+
+msgid "Docker isn't running"
+msgstr "Docker не запущен"
+
+msgid "Dockyard can't reach Docker yet"
+msgstr "Dockyard пока не может связаться с Docker"
+
+msgid "No container engine found"
+msgstr "Движок контейнеров не найден"
+
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+msgid ""
+"Your account isn't allowed to use the Docker socket. Add yourself to the "
+"docker group, then sign out and back in."
+msgstr ""
+"Вашей учётной записи не разрешено использовать сокет Docker. Добавьте себя в "
+"группу docker и перезайдите в систему."
+
+msgid ""
+"The socket exists but nothing is answering. Start the engine and Dockyard "
+"will pick it up."
+msgstr ""
+"Сокет существует, но никто не отвечает. Запустите движок, и Dockyard его "
+"подхватит."
+
+msgid "Install Docker or enable Podman's socket, then reopen this panel."
+msgstr ""
+"Установите Docker или включите сокет Podman, затем снова откройте эту панель."
+
+msgid "Dockyard could not run its helper. Make sure python3 is installed."
+msgstr ""
+"Dockyard не смог запустить свой помощник. Убедитесь, что установлен python3."
+
+msgid "Start Docker"
+msgstr "Запустить Docker"
+
+msgid "Copy fix"
+msgstr "Копировать решение"
+
+msgid "Retry"
+msgstr "Повторить"
+
+msgid "Engine unreachable"
+msgstr "Движок недоступен"
+
+msgid "Connecting…"
+msgstr "Подключение…"
+
+msgid "rootless"
+msgstr "rootless"
+
+msgid "Free up %1"
+msgstr "Освободить %1"
+
+msgid "Free up space"
+msgstr "Освободить место"
+
+msgid "Standalone"
+msgstr "Отдельные"
+
+msgid "%1/%2 running"
+msgstr "%1/%2 работают"
+
+msgid "Start all"
+msgstr "Запустить все"
+
+msgid "Restart all"
+msgstr "Перезапустить все"
+
+msgid "Stop all"
+msgstr "Остановить все"
+
+msgid "Could not read logs."
+msgstr "Не удалось прочитать журнал."
+
+msgid "Back to containers"
+msgstr "Назад к контейнерам"
+
+msgid "Container removed"
+msgstr "Контейнер удалён"
+
+msgid "Logs · last %1 lines"
+msgstr "Журнал · последние строки: %1"
+
+msgid "(trimmed)"
+msgstr "(обрезано)"
+
+msgid "Copy all"
+msgstr "Копировать всё"
+
+msgid "Container logs"
+msgstr "Журнал контейнера"
+
+msgid "Nothing logged yet"
+msgstr "В журнале пока пусто"
+
+msgid "This container hasn't written anything to stdout or stderr."
+msgstr "Этот контейнер ничего не записал в stdout или stderr."
+
+msgid "Couldn't read the logs"
+msgstr "Не удалось прочитать журнал"
+
+msgid "Refreshing…"
+msgstr "Обновление…"
+
+msgid "Following new output"
+msgstr "Следим за новым выводом"
+
+msgctxt "log view state"
+msgid "Paused"
+msgstr "На паузе"
+
+msgid "Follow"
+msgstr "Следить"
+
+msgid "%1 running · %2 stopped"
+msgstr "%1 работают · %2 остановлены"
+
+msgid "%1 need attention"
+msgstr "%1 требуют внимания"
+
+msgid "%1 stopped unexpectedly"
+msgstr "%1 неожиданно остановился"
+
+msgid "%1 is unhealthy"
+msgstr "%1 нездоров (unhealthy)"
+
+msgid "Health checks are failing"
+msgstr "Проверки состояния не проходят"
+
+msgid "%1 is restart-looping"
+msgstr "%1 перезапускается в цикле"
+
+msgid "Stopped containers"
+msgstr "Остановленные контейнеры"
+
+msgid "Removes exited and created containers"
+msgstr "Удаляет завершённые и созданные контейнеры"
+
+msgid "Dangling images"
+msgstr "Висячие образы"
+
+msgid "Untagged layers nothing refers to"
+msgstr "Слои без тегов, на которые ничто не ссылается"
+
+msgid "All unused images"
+msgstr "Все неиспользуемые образы"
+
+msgid "Any image no container uses, tagged or not"
+msgstr "Любой образ, который не использует ни один контейнер, с тегом или без"
+
+msgid "Anonymous volumes"
+msgstr "Анонимные тома"
+
+msgid "Unnamed volumes no container uses. Named volumes stay."
+msgstr ""
+"Безымянные тома, которые не использует ни один контейнер. Именованные тома "
+"остаются."
+
+msgid "Build cache"
+msgstr "Кэш сборки"
+
+msgid "Cached layers from docker build"
+msgstr "Кэшированные слои docker build"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "This deletes their data for good."
+msgstr "Это навсегда удалит их данные."
+
+msgid "Confirm"
+msgstr "Подтвердить"
+
+msgid "Clean"
+msgstr "Очистить"
+
+msgid "<untagged>"
+msgstr "<без тега>"
+
+msgid "internal"
+msgstr "внутренняя"
+
+msgid "In use"
+msgstr "Используется"
+
+msgid "Dangling"
+msgstr "Висячий"
+
+msgid "Unused"
+msgstr "Не используется"
+
+msgid "anonymous"
+msgstr "анонимный"
+
+msgid "system"
+msgstr "системная"
+
+msgid "Remove?"
+msgstr "Удалить?"
+
+msgid "Remove image"
+msgstr "Удалить образ"
+
+msgid "Remove volume"
+msgstr "Удалить том"
+
+msgid "Remove network"
+msgstr "Удалить сеть"
+
+msgctxt "container state"
+msgid "Running"
+msgstr "Работает"
+
+msgctxt "container state"
+msgid "Starting"
+msgstr "Запускается"
+
+msgctxt "container state"
+msgid "Unhealthy"
+msgstr "Нездоров"
+
+msgctxt "container state"
+msgid "Restarting"
+msgstr "Перезапускается"
+
+msgctxt "container state"
+msgid "Paused"
+msgstr "На паузе"
+
+msgctxt "container state, %1 is the exit code"
+msgid "Exited %1"
+msgstr "Завершён с кодом %1"
+
+msgctxt "container state"
+msgid "Stopped"
+msgstr "Остановлен"
+
+msgctxt "container state"
+msgid "Created"
+msgstr "Создан"
+
+msgctxt "short duration, seconds"
+msgid "%1s"
+msgstr "%1с"
+
+msgctxt "short duration, minutes"
+msgid "%1m"
+msgstr "%1м"
+
+msgctxt "short duration, hours"
+msgid "%1h"
+msgstr "%1ч"
+
+msgctxt "short duration, days"
+msgid "%1d"
+msgstr "%1д"
+
+msgctxt "short duration, weeks"
+msgid "%1w"
+msgstr "%1н"
+
+msgctxt "short duration, months"
+msgid "%1mo"
+msgstr "%1мес"
+
+msgctxt "short duration, years"
+msgid "%1y"
+msgstr "%1г"
+
+msgctxt "short duration, less than a second"
+msgid "now"
+msgstr "сейчас"
+
+msgctxt "%1 is a short duration such as 3d"
+msgid "%1 ago"
+msgstr "%1 назад"
+
+msgctxt "relative time"
+msgid "just now"
+msgstr "только что"
+
+msgctxt "relative time, minutes"
+msgid "%1m ago"
+msgstr "%1 мин назад"
+
+msgctxt "relative time, hours"
+msgid "%1h ago"
+msgstr "%1 ч назад"
+
+msgctxt "relative time, days"
+msgid "%1d ago"
+msgstr "%1 д назад"
+
+msgctxt "relative time, months"
+msgid "%1mo ago"
+msgstr "%1 мес назад"
+
+msgctxt "relative time, years"
+msgid "%1y ago"
+msgstr "%1 г назад"
+
+msgid "Theme:"
+msgstr "Тема:"
+
+msgid "Follow the Plasma colour scheme"
+msgstr "Следовать цветовой схеме Plasma"
+
+msgid "Always dark (harbour at night)"
+msgstr "Всегда тёмная (верфь ночью)"
+
+msgid "Always light"
+msgstr "Всегда светлая"
+
+msgid "Open on:"
+msgstr "Открывать на вкладке:"
+
+msgid "Containers:"
+msgstr "Контейнеры:"
+
+msgid "Panel icon:"
+msgstr "Значок на панели:"
+
+msgid "Show the running count next to the icon"
+msgstr "Показывать число работающих рядом со значком"
+
+msgid "Engine socket:"
+msgstr "Сокет движка:"
+
+msgid ""
+"Leave it on auto to find Docker, rootless Docker and Podman, or enter a "
+"socket path."
+msgstr ""
+"Оставьте auto, чтобы найти Docker, rootless Docker и Podman, или укажите "
+"путь к сокету."
+
+msgid "Refresh while open:"
+msgstr "Обновлять, пока открыто:"
+
+msgid "%1 s"
+msgstr "%1 с"
+
+msgid "Refresh in the background:"
+msgstr "Обновлять в фоне:"
+
+msgid "Container CLI:"
+msgstr "CLI контейнеров:"
+
+msgid "Terminal command:"
+msgstr "Команда терминала:"
+
+msgid "Notifications:"
+msgstr "Уведомления:"
+
+msgid "Tell me when a container crashes, turns unhealthy or restart-loops"
+msgstr ""
+"Сообщать, когда контейнер падает, становится unhealthy или перезапускается в "
+"цикле"
+
+msgid "Engine"
+msgstr "Движок"
+
+msgid "Appearance"
+msgstr "Внешний вид"

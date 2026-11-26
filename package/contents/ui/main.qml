@@ -2,6 +2,7 @@ import QtQuick
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
+import "logic.js" as L
 
 PlasmoidItem {
     id: root
@@ -10,11 +11,12 @@ PlasmoidItem {
 
     Plasmoid.icon: "dockyard"
     Plasmoid.status: Backend.tally.attention > 0 ? PlasmaCore.Types.NeedsAttentionStatus : PlasmaCore.Types.ActiveStatus
+    Tr { id: tr }
     toolTipMainText: "Dockyard"
-    toolTipSubText: Backend.errorKind !== "" ? "Engine unreachable"
-                  : !Backend.loaded ? "Connecting…"
-                  : Backend.tally.running + " running · " + Backend.tally.stopped + " stopped"
-                    + (Backend.tally.attention > 0 ? " · " + Backend.tally.attention + " need attention" : "")
+    toolTipSubText: Backend.errorKind !== "" ? i18n("Engine unreachable")
+                  : !Backend.loaded ? i18n("Connecting…")
+                  : i18n("%1 running · %2 stopped", Backend.tally.running, Backend.tally.stopped)
+                    + (Backend.tally.attention > 0 ? " · " + i18n("%1 need attention", Backend.tally.attention) : "")
 
     compactRepresentation: Compact { onToggle: root.expanded = !root.expanded }
     fullRepresentation: Full {}
@@ -49,10 +51,18 @@ PlasmoidItem {
     }
     Connections {
         target: Backend
-        function onAlert(title, body) { if (root.cfg.notifications) notification.createObject(root, { title: title, body: body }) }
+        function onAlertEvent(kind, c) {
+            if (!root.cfg.notifications) return
+            const st = L.statusInfo(c)
+            let title, body = c.image
+            if (kind === "crashed") { title = i18n("%1 stopped unexpectedly", c.name); body = tr.status(st) + " · " + c.image }
+            else if (kind === "unhealthy") { title = i18n("%1 is unhealthy", c.name); body = i18n("Health checks are failing") + " · " + c.image }
+            else title = i18n("%1 is restart-looping", c.name)
+            notification.createObject(root, { title: title, body: body })
+        }
     }
 
     Plasmoid.contextualActions: [
-        PlasmaCore.Action { text: "Refresh now"; icon.name: "view-refresh"; onTriggered: Backend.refresh() }
+        PlasmaCore.Action { text: i18n("Refresh now"); icon.name: "view-refresh"; onTriggered: Backend.refresh() }
     ]
 }

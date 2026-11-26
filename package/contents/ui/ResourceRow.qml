@@ -14,22 +14,23 @@ Item {
     }
     readonly property bool alive: r !== null
     property bool armed: false
+    Tr { id: tr }
     Timer { id: disarm; interval: 3000; onTriggered: row.armed = false }
 
     readonly property var parts: type === "image" && r ? L.splitImage(r.tags[0] || "") : ({ name: "", tag: "" })
-    readonly property string title: !r ? "" : type === "image" ? (r.tags.length ? parts.name : "<untagged>")
+    readonly property string title: !r ? "" : type === "image" ? (r.tags.length ? parts.name : i18n("<untagged>"))
                                     : type === "volume" ? (r.anonymous ? r.name.slice(0, 12) : r.name) : r.name
     readonly property string sub: {
         if (!r) return ""
-        if (type === "image") return r.short + "  ·  " + L.fmtBytes(r.size) + "  ·  " + L.ago(r.created)
+        if (type === "image") return r.short + "  ·  " + L.fmtBytes(r.size) + "  ·  " + tr.ago(r.created)
         if (type === "volume") {
             const sz = Backend.df && Backend.df.volumeSizes && Backend.df.volumeSizes[r.name] >= 0 ? "  ·  " + L.fmtBytes(Backend.df.volumeSizes[r.name]) : ""
             return r.driver + (r.project ? "  ·  " + r.project : "") + sz
         }
-        return r.driver + "  ·  " + r.scope + (r.internal ? "  ·  internal" : "")
+        return r.driver + "  ·  " + r.scope + (r.internal ? "  ·  " + i18n("internal") : "")
     }
-    readonly property string badge: !r ? "" : type === "network" ? (r.used + (r.used === 1 ? " container" : " containers"))
-                                    : (r.used > 0 ? "In use" : (r.dangling ? "Dangling" : "Unused"))
+    readonly property string badge: !r ? "" : type === "network" ? i18np("%1 container", "%1 containers", r.used)
+                                    : (r.used > 0 ? i18n("In use") : (r.dangling ? i18n("Dangling") : i18n("Unused")))
     readonly property string badgeTone: !r ? "neutral" : (r.used > 0 ? "run" : (type === "network" ? "neutral" : "warn"))
     readonly property bool removable: !!r && !(type === "network" && r.system) && !(type !== "network" && r.used > 0 && false)
 
@@ -61,8 +62,8 @@ Item {
                 Txt { width: Math.min(implicitWidth, parent.width - (tagChip.visible ? tagChip.width + parent.spacing : 0)); text: row.title; kind: "body"; strong: true; elide: Text.ElideRight
                       font.family: row.type === "volume" && row.r && row.r.anonymous ? Theme.mono : Theme.sans }
                 Chip { id: tagChip; visible: row.type === "image" && !!row.r && row.r.tags.length > 0; text: row.parts.tag + (row.r && row.r.tags.length > 1 ? " +" + (row.r.tags.length - 1) : ""); mono: true; height: Theme.s(17) }
-                Chip { visible: row.type === "volume" && !!row.r && row.r.anonymous; text: "anonymous"; height: Theme.s(17) }
-                Chip { visible: row.type === "network" && !!row.r && row.r.system; text: "system"; height: Theme.s(17) }
+                Chip { visible: row.type === "volume" && !!row.r && row.r.anonymous; text: i18n("anonymous"); height: Theme.s(17) }
+                Chip { visible: row.type === "network" && !!row.r && row.r.system; text: i18n("system"); height: Theme.s(17) }
             }
             Txt { width: parent.width; text: row.sub; kind: "monoSm"; color: Theme.tx3; elide: Text.ElideRight }
         }
@@ -77,8 +78,8 @@ Item {
                 visible: row.removable
                 opacity: hover.hovered || row.armed || visualFocus ? 1 : 0
                 symbol: "trash"; tone: "danger"; armed: row.armed
-                label: row.armed ? "Remove?" : ""
-                tip: "Remove " + row.type
+                label: row.armed ? i18n("Remove?") : ""
+                tip: row.type === "image" ? i18n("Remove image") : row.type === "volume" ? i18n("Remove volume") : i18n("Remove network")
                 Behavior on opacity { NumberAnimation { duration: Theme.fast } }
                 onClicked: {
                     if (!row.armed) { row.armed = true; disarm.restart(); return }

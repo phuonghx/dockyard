@@ -1,0 +1,633 @@
+# Português (Brasil) translation of Dockyard.
+# Copyright (C) 2026 Xuan-Phuong Hoang
+# This file is distributed under the same license as the Dockyard package.
+msgid ""
+msgstr ""
+"Project-Id-Version: dockyard 1.0.0\n"
+"Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
+"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"PO-Revision-Date: 2026-11-26 12:00+0700\n"
+"Last-Translator: Dockyard translators\n"
+"Language-Team: Português (Brasil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Expanded"
+msgstr "Expandido"
+
+msgid "Collapsed"
+msgstr "Recolhido"
+
+msgid "Open http://localhost:%1"
+msgstr "Abrir http://localhost:%1"
+
+msgid "Copy localhost:%1"
+msgstr "Copiar localhost:%1"
+
+msgid "Logs"
+msgstr "Logs"
+
+msgid "Restart"
+msgstr "Reiniciar"
+
+msgid "Stop"
+msgstr "Parar"
+
+msgid "Start"
+msgstr "Iniciar"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Memory"
+msgstr "Memória"
+
+msgid "Network ↓ ↑"
+msgstr "Rede ↓ ↑"
+
+msgid "Image"
+msgstr "Imagem"
+
+msgid "Compose"
+msgstr "Compose"
+
+msgid "Ports"
+msgstr "Portas"
+
+msgid "Open in browser"
+msgstr "Abrir no navegador"
+
+msgid "Copy address"
+msgstr "Copiar endereço"
+
+msgid "Network"
+msgstr "Rede"
+
+msgid "Mounts"
+msgstr "Montagens"
+
+msgid "Policy"
+msgstr "Política"
+
+msgid "restarted %1 time"
+msgid_plural "restarted %1 times"
+msgstr[0] "reiniciado %1 vez"
+msgstr[1] "reiniciado %1 vezes"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Copy full ID"
+msgstr "Copiar ID completo"
+
+msgid "Shell"
+msgstr "Shell"
+
+msgid "Resume"
+msgstr "Retomar"
+
+msgid "Pause"
+msgstr "Pausar"
+
+msgid "Kill now?"
+msgstr "Forçar agora?"
+
+msgid "Kill"
+msgstr "Forçar parada"
+
+msgid "Remove for good?"
+msgstr "Remover definitivamente?"
+
+msgid "Remove"
+msgstr "Remover"
+
+msgid "%1 container"
+msgid_plural "%1 containers"
+msgstr[0] "%1 contêiner"
+msgstr[1] "%1 contêineres"
+
+msgid "Started %1"
+msgstr "%1 iniciado"
+
+msgid "Stopped %1"
+msgstr "%1 parado"
+
+msgid "Restarted %1"
+msgstr "%1 reiniciado"
+
+msgid "Paused %1"
+msgstr "%1 pausado"
+
+msgid "Resumed %1"
+msgstr "%1 retomado"
+
+msgid "Killed %1"
+msgstr "%1 encerrado à força"
+
+msgid "Removed %1"
+msgstr "%1 removido"
+
+msgid "That didn't work"
+msgstr "Não funcionou"
+
+msgid "Could not remove %1"
+msgstr "Não foi possível remover %1"
+
+msgid "Reclaimed %1"
+msgstr "%1 recuperados"
+
+msgid "Nothing to clean"
+msgstr "Nada para limpar"
+
+msgid "Cleanup failed"
+msgstr "A limpeza falhou"
+
+msgid "Asking systemd to start Docker…"
+msgstr "Pedindo ao systemd para iniciar o Docker…"
+
+msgid "Docker is up"
+msgstr "O Docker está ativo"
+
+msgid "Could not start Docker: %1"
+msgstr "Não foi possível iniciar o Docker: %1"
+
+msgid "Could not start Docker"
+msgstr "Não foi possível iniciar o Docker"
+
+msgid "Copied to clipboard"
+msgstr "Copiado para a área de transferência"
+
+msgid "Keep every container shipshape."
+msgstr "Mantenha cada contêiner em ordem."
+
+msgid "Refresh now"
+msgstr "Atualizar agora"
+
+msgid "Configure Dockyard"
+msgstr "Configurar o Dockyard"
+
+msgctxt "unit, singular"
+msgid "core"
+msgstr "núcleo"
+
+msgctxt "unit, plural"
+msgid "cores"
+msgstr "núcleos"
+
+msgid "of %1 available"
+msgstr "de %1 disponíveis"
+
+msgid "of %1"
+msgstr "de %1"
+
+msgctxt "filter: containers that are running"
+msgid "running"
+msgstr "em execução"
+
+msgctxt "filter: containers that need attention"
+msgid "need attention"
+msgstr "precisam de atenção"
+
+msgctxt "filter: containers that are stopped"
+msgid "stopped"
+msgstr "parados"
+
+msgctxt "filter: containers that are paused"
+msgid "paused"
+msgstr "pausados"
+
+msgid "Containers"
+msgstr "Contêineres"
+
+msgid "Images"
+msgstr "Imagens"
+
+msgid "Volumes"
+msgstr "Volumes"
+
+msgid "Networks"
+msgstr "Redes"
+
+msgid "Search containers, images, ports"
+msgstr "Buscar contêineres, imagens, portas"
+
+msgid "Search images"
+msgstr "Buscar imagens"
+
+msgid "Search volumes"
+msgstr "Buscar volumes"
+
+msgid "Search networks"
+msgstr "Buscar redes"
+
+msgid "Grouped by Compose project"
+msgstr "Agrupados por projeto do Compose"
+
+msgid "Group by Compose project"
+msgstr "Agrupar por projeto do Compose"
+
+msgid "Showing unused only"
+msgstr "Mostrando só os não usados"
+
+msgid "Show unused only"
+msgstr "Mostrar só os não usados"
+
+msgid "Nothing matches “%1”"
+msgstr "Nada corresponde a “%1”"
+
+msgid "No containers in this state"
+msgstr "Nenhum contêiner neste estado"
+
+msgid "Nothing unused. Tidy ship."
+msgstr "Nada sem uso. Navio em ordem."
+
+msgid "The dockyard is empty"
+msgstr "O estaleiro está vazio"
+
+msgid "No containers here"
+msgstr "Nenhum contêiner"
+
+msgid "No images here"
+msgstr "Nenhuma imagem"
+
+msgid "No volumes here"
+msgstr "Nenhum volume"
+
+msgid "No networks here"
+msgstr "Nenhuma rede"
+
+msgid "Start a container and it will show up here."
+msgstr "Inicie um contêiner e ele aparecerá aqui."
+
+msgid "Clear filters"
+msgstr "Limpar filtros"
+
+msgid "Copy a first command"
+msgstr "Copiar um primeiro comando"
+
+msgid "Docker isn't running"
+msgstr "O Docker não está em execução"
+
+msgid "Dockyard can't reach Docker yet"
+msgstr "O Dockyard ainda não consegue acessar o Docker"
+
+msgid "No container engine found"
+msgstr "Nenhum mecanismo de contêineres encontrado"
+
+msgid "Something went wrong"
+msgstr "Algo deu errado"
+
+msgid ""
+"Your account isn't allowed to use the Docker socket. Add yourself to the "
+"docker group, then sign out and back in."
+msgstr ""
+"Sua conta não tem permissão para usar o socket do Docker. Adicione-se ao "
+"grupo docker e faça login de novo."
+
+msgid ""
+"The socket exists but nothing is answering. Start the engine and Dockyard "
+"will pick it up."
+msgstr ""
+"O socket existe, mas ninguém responde. Inicie o mecanismo e o Dockyard vai "
+"detectá-lo."
+
+msgid "Install Docker or enable Podman's socket, then reopen this panel."
+msgstr "Instale o Docker ou ative o socket do Podman e reabra este painel."
+
+msgid "Dockyard could not run its helper. Make sure python3 is installed."
+msgstr ""
+"O Dockyard não conseguiu executar seu auxiliar. Confirme que o python3 está "
+"instalado."
+
+msgid "Start Docker"
+msgstr "Iniciar o Docker"
+
+msgid "Copy fix"
+msgstr "Copiar solução"
+
+msgid "Retry"
+msgstr "Tentar de novo"
+
+msgid "Engine unreachable"
+msgstr "Mecanismo inacessível"
+
+msgid "Connecting…"
+msgstr "Conectando…"
+
+msgid "rootless"
+msgstr "rootless"
+
+msgid "Free up %1"
+msgstr "Liberar %1"
+
+msgid "Free up space"
+msgstr "Liberar espaço"
+
+msgid "Standalone"
+msgstr "Avulsos"
+
+msgid "%1/%2 running"
+msgstr "%1/%2 em execução"
+
+msgid "Start all"
+msgstr "Iniciar todos"
+
+msgid "Restart all"
+msgstr "Reiniciar todos"
+
+msgid "Stop all"
+msgstr "Parar todos"
+
+msgid "Could not read logs."
+msgstr "Não foi possível ler os logs."
+
+msgid "Back to containers"
+msgstr "Voltar aos contêineres"
+
+msgid "Container removed"
+msgstr "Contêiner removido"
+
+msgid "Logs · last %1 lines"
+msgstr "Logs · últimas %1 linhas"
+
+msgid "(trimmed)"
+msgstr "(cortado)"
+
+msgid "Copy all"
+msgstr "Copiar tudo"
+
+msgid "Container logs"
+msgstr "Logs do contêiner"
+
+msgid "Nothing logged yet"
+msgstr "Nada registrado ainda"
+
+msgid "This container hasn't written anything to stdout or stderr."
+msgstr "Este contêiner não escreveu nada em stdout nem stderr."
+
+msgid "Couldn't read the logs"
+msgstr "Não foi possível ler os logs"
+
+msgid "Refreshing…"
+msgstr "Atualizando…"
+
+msgid "Following new output"
+msgstr "Acompanhando a nova saída"
+
+msgctxt "log view state"
+msgid "Paused"
+msgstr "Pausado"
+
+msgid "Follow"
+msgstr "Acompanhar"
+
+msgid "%1 running · %2 stopped"
+msgstr "%1 em execução · %2 parados"
+
+msgid "%1 need attention"
+msgstr "%1 precisam de atenção"
+
+msgid "%1 stopped unexpectedly"
+msgstr "%1 parou inesperadamente"
+
+msgid "%1 is unhealthy"
+msgstr "%1 não está saudável (unhealthy)"
+
+msgid "Health checks are failing"
+msgstr "As verificações de saúde estão falhando"
+
+msgid "%1 is restart-looping"
+msgstr "%1 está reiniciando em loop"
+
+msgid "Stopped containers"
+msgstr "Contêineres parados"
+
+msgid "Removes exited and created containers"
+msgstr "Remove contêineres encerrados e criados"
+
+msgid "Dangling images"
+msgstr "Imagens órfãs"
+
+msgid "Untagged layers nothing refers to"
+msgstr "Camadas sem tag às quais nada se refere"
+
+msgid "All unused images"
+msgstr "Todas as imagens sem uso"
+
+msgid "Any image no container uses, tagged or not"
+msgstr "Qualquer imagem que nenhum contêiner use, com tag ou não"
+
+msgid "Anonymous volumes"
+msgstr "Volumes anônimos"
+
+msgid "Unnamed volumes no container uses. Named volumes stay."
+msgstr ""
+"Volumes sem nome que nenhum contêiner usa. Volumes nomeados são mantidos."
+
+msgid "Build cache"
+msgstr "Cache de build"
+
+msgid "Cached layers from docker build"
+msgstr "Camadas em cache do docker build"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "This deletes their data for good."
+msgstr "Isso apaga os dados deles para sempre."
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "Clean"
+msgstr "Limpar"
+
+msgid "<untagged>"
+msgstr "<sem tag>"
+
+msgid "internal"
+msgstr "interna"
+
+msgid "In use"
+msgstr "Em uso"
+
+msgid "Dangling"
+msgstr "Órfã"
+
+msgid "Unused"
+msgstr "Sem uso"
+
+msgid "anonymous"
+msgstr "anônimo"
+
+msgid "system"
+msgstr "sistema"
+
+msgid "Remove?"
+msgstr "Remover?"
+
+msgid "Remove image"
+msgstr "Remover imagem"
+
+msgid "Remove volume"
+msgstr "Remover volume"
+
+msgid "Remove network"
+msgstr "Remover rede"
+
+msgctxt "container state"
+msgid "Running"
+msgstr "Em execução"
+
+msgctxt "container state"
+msgid "Starting"
+msgstr "Iniciando"
+
+msgctxt "container state"
+msgid "Unhealthy"
+msgstr "Não saudável"
+
+msgctxt "container state"
+msgid "Restarting"
+msgstr "Reiniciando"
+
+msgctxt "container state"
+msgid "Paused"
+msgstr "Pausado"
+
+msgctxt "container state, %1 is the exit code"
+msgid "Exited %1"
+msgstr "Saiu com %1"
+
+msgctxt "container state"
+msgid "Stopped"
+msgstr "Parado"
+
+msgctxt "container state"
+msgid "Created"
+msgstr "Criado"
+
+msgctxt "short duration, seconds"
+msgid "%1s"
+msgstr "%1s"
+
+msgctxt "short duration, minutes"
+msgid "%1m"
+msgstr "%1min"
+
+msgctxt "short duration, hours"
+msgid "%1h"
+msgstr "%1h"
+
+msgctxt "short duration, days"
+msgid "%1d"
+msgstr "%1d"
+
+msgctxt "short duration, weeks"
+msgid "%1w"
+msgstr "%1sem"
+
+msgctxt "short duration, months"
+msgid "%1mo"
+msgstr "%1mês"
+
+msgctxt "short duration, years"
+msgid "%1y"
+msgstr "%1a"
+
+msgctxt "short duration, less than a second"
+msgid "now"
+msgstr "agora"
+
+msgctxt "%1 is a short duration such as 3d"
+msgid "%1 ago"
+msgstr "há %1"
+
+msgctxt "relative time"
+msgid "just now"
+msgstr "agora mesmo"
+
+msgctxt "relative time, minutes"
+msgid "%1m ago"
+msgstr "há %1 min"
+
+msgctxt "relative time, hours"
+msgid "%1h ago"
+msgstr "há %1 h"
+
+msgctxt "relative time, days"
+msgid "%1d ago"
+msgstr "há %1 d"
+
+msgctxt "relative time, months"
+msgid "%1mo ago"
+msgstr "há %1 meses"
+
+msgctxt "relative time, years"
+msgid "%1y ago"
+msgstr "há %1 anos"
+
+msgid "Theme:"
+msgstr "Tema:"
+
+msgid "Follow the Plasma colour scheme"
+msgstr "Seguir o esquema de cores do Plasma"
+
+msgid "Always dark (harbour at night)"
+msgstr "Sempre escuro (o estaleiro à noite)"
+
+msgid "Always light"
+msgstr "Sempre claro"
+
+msgid "Open on:"
+msgstr "Abrir em:"
+
+msgid "Containers:"
+msgstr "Contêineres:"
+
+msgid "Panel icon:"
+msgstr "Ícone do painel:"
+
+msgid "Show the running count next to the icon"
+msgstr "Mostrar a contagem em execução ao lado do ícone"
+
+msgid "Engine socket:"
+msgstr "Socket do mecanismo:"
+
+msgid ""
+"Leave it on auto to find Docker, rootless Docker and Podman, or enter a "
+"socket path."
+msgstr ""
+"Deixe em auto para encontrar Docker, Docker rootless e Podman, ou informe um "
+"caminho de socket."
+
+msgid "Refresh while open:"
+msgstr "Atualizar quando aberto:"
+
+msgid "%1 s"
+msgstr "%1 s"
+
+msgid "Refresh in the background:"
+msgstr "Atualizar em segundo plano:"
+
+msgid "Container CLI:"
+msgstr "CLI de contêineres:"
+
+msgid "Terminal command:"
+msgstr "Comando do terminal:"
+
+msgid "Notifications:"
+msgstr "Notificações:"
+
+msgid "Tell me when a container crashes, turns unhealthy or restart-loops"
+msgstr ""
+"Avise-me quando um contêiner falhar, ficar unhealthy ou reiniciar em loop"
+
+msgid "Engine"
+msgstr "Mecanismo"
+
+msgid "Appearance"
+msgstr "Aparência"

@@ -46,8 +46,11 @@ QtObject {
     property real memUsed: 0
     property var tally: ({ total: 0, running: 0, attention: 0, stopped: 0, paused: 0 })
 
-    signal toast(string text, string tone)
-    signal alert(string title, string body)
+    // Backend never writes user-facing words (a singleton cannot reach the translation catalogue):
+    // it emits codes and the UI turns them into the user's language.
+    signal toast(string text, string tone)                              // raw text from the engine, shown as is
+    signal notice(string code, string a, string b, string tone)         // coded message, see Full.qml
+    signal alertEvent(string kind, var container)                       // see main.qml
     signal copyRequested(string text)
     function copy(text) { copyRequested(text) }
 
@@ -76,8 +79,7 @@ QtObject {
         sh("python3 " + q(scriptPath) + " --socket " + q(socketPath || "auto") + " " + args, (code, out, err) => {
             let d
             try { d = JSON.parse(out) } catch (e) {
-                d = { ok: false, error: "internal", hint: "Dockyard needs python3 (it ships with Fedora).",
-                      message: (err || out || "The helper returned nothing.").trim().slice(0, 300) }
+                d = { ok: false, error: "internal", hint: "", message: (err || out || "").trim().slice(0, 300) }
             }
             cb(d)
         })
@@ -114,11 +116,11 @@ QtObject {
                 const o = old[c.id]
                 if (!o || pending[c.id]) return
                 if (o.state === "running" && c.state === "exited" && L.statusInfo(c).attention)
-                    alert(c.name + " stopped unexpectedly", L.statusInfo(c).label + " · " + c.image)
+                    alertEvent("crashed", c)
                 else if (c.health === "unhealthy" && o.health !== "unhealthy")
-                    alert(c.name + " is unhealthy", "Health checks are failing · " + c.image)
+                    alertEvent("unhealthy", c)
                 else if (c.state === "restarting" && o.state !== "restarting")
-                    alert(c.name + " is restart-looping", c.image)
+                    alertEvent("looping", c)
             })
         }
         errorKind = ""; errorMessage = ""; errorHint = ""
@@ -157,8 +159,6 @@ QtObject {
     }
 
     // ---- actions
-    readonly property var _past: ({ start: "Started", stop: "Stopped", restart: "Restarted", pause: "Paused",
-                                    unpause: "Resumed", kill: "Killed", rm: "Removed" })
 
     function _mark(ids, action) {
         const p = Object.assign({}, pending)
@@ -174,11 +174,11 @@ QtObject {
             _mark(ids, "")
             if (d.results && !d.ok) {
                 const bad = d.results.filter(r => !r.ok)[0]
-                toast(bad ? bad.message : "That didn't work", "bad")
-            } else if (!d.ok) toast(d.message || "That didn't work", "bad")
+                if (bad && bad.message) toast(bad.message, "bad"); else notice("act-failed", "", "", "bad")
+            } else if (!d.ok) { if (d.message) toast(d.message, "bad"); else notice("act-failed", "", "", "bad") }
             else {
-                const who = ids.length === 1 && cmap[ids[0]] ? cmap[ids[0]].name : ids.length + " containers"
-                toast(_past[action] + " " + who, "ok")
+                // a = action, b = the container's name, or "#N" when N containers were acted on
+                notice("acted", action, ids.length === 1 && cmap[ids[0]] ? cmap[ids[0]].name : "#" + ids.length, "ok")
             }
             refresh()
         })
@@ -186,15 +186,16 @@ QtObject {
 
     function removeResource(kind, id, label) {
         helper(kind + " " + q(id), d => {
-            if (d.ok) toast("Removed " + label, "ok"); else toast(d.message || "Could not remove " + label, "bad")
+            if (d.ok) notice("removed", label, "", "ok")
+            else if (d.message) toast(d.message, "bad"); else notice("remove-failed", label, "", "bad")
             refresh(); fetchDf()
         })
     }
 
     function prune(what) {
         helper("prune " + what, d => {
-            if (d.ok) toast(d.freed > 0 ? "Reclaimed " + L.fmtBytes(d.freed) : "Nothing to clean", "ok")
-            else toast(d.message || "Cleanup failed", "bad")
+            if (d.ok) { if (d.freed > 0) notice("reclaimed", L.fmtBytes(d.freed), "", "ok"); else notice("nothing-to-clean", "", "", "ok") }
+            else if (d.message) toast(d.message, "bad"); else notice("prune-failed", "", "", "bad")
             refresh(); fetchDf()
         })
     }
@@ -207,10 +208,10 @@ QtObject {
     }
 
     function startEngine() {
-        toast("Asking systemd to start Docker…", "info")
+        notice("starting-docker", "", "", "info")
         sh("pkexec systemctl start docker", (code, out, err) => {
-            if (code === 0) { toast("Docker is up", "ok"); refresh() }
-            else toast("Could not start Docker" + (err ? ": " + err.trim().slice(0, 80) : ""), "bad")
+            if (code === 0) { notice("docker-up", "", "", "ok"); refresh() }
+            else notice("docker-start-failed", err ? err.trim().slice(0, 80) : "", "", "bad")
         })
     }
 }

@@ -16,49 +16,43 @@ function fmtCores(pct) {
 function fmtPct(p) { return p >= 10 ? Math.round(p) + "%" : p.toFixed(1) + "%" }
 
 function compactSpan(text) {
-    // "3 days" -> "3d", "About an hour" -> "1h", "Less than a second" -> "now"
+    // "3 days" -> {n:3,u:"d"}, "About an hour" -> {n:1,u:"h"}, "Less than a second" -> {n:0,u:"now"}
     var s = (text || "").toLowerCase().replace("about an ", "1 ").replace("about a ", "1 ").replace(/^an? /, "1 ")
-    if (s.indexOf("less than") === 0) return "now"
+    if (s.indexOf("less than") === 0) return { n: 0, u: "now" }
     var m = /(\d+)\s*(second|minute|hour|day|week|month|year)/.exec(s)
-    if (!m) return ""
-    return m[1] + { second: "s", minute: "m", hour: "h", day: "d", week: "w", month: "mo", year: "y" }[m[2]]
+    if (!m) return { n: 0, u: "" }
+    return { n: parseInt(m[1]), u: { second: "s", minute: "m", hour: "h", day: "d", week: "w", month: "mo", year: "y" }[m[2]] }
 }
 
-function ago(epochSec) {
-    var d = Math.max(0, Date.now() / 1000 - epochSec)
-    if (d < 90) return "just now"
-    if (d < 5400) return Math.round(d / 60) + "m ago"
-    if (d < 129600) return Math.round(d / 3600) + "h ago"
-    if (d < 86400 * 45) return Math.round(d / 86400) + "d ago"
-    if (d < 86400 * 400) return Math.round(d / 86400 / 30) + "mo ago"
-    return Math.round(d / 86400 / 365) + "y ago"
-}
-
-// One vocabulary for every container state. tone drives colour, shape and copy.
+// One vocabulary for every container state. 'key' is a code (translated by Tr.qml), tone drives colour and shape.
+// 'label' stays English on purpose: it is only used for matching the search box.
 function statusInfo(c) {
     var st = c.status || "", s = c.state
-    var m
+    var m, t
+    function info(tone, key, label, span, attention, code) {
+        return { tone: tone, key: key, label: label, code: code || 0, raw: s, sinceN: span ? span.n : 0, sinceU: span ? span.u : "", attention: attention }
+    }
     if (s === "running") {
         m = /^Up (.*?)(?: \(|$)/.exec(st)
-        var up = m ? compactSpan(m[1]) : ""
-        if (c.health === "unhealthy") return { tone: "bad", label: "Unhealthy", since: up, attention: true }
-        if (c.health === "starting") return { tone: "info", label: "Starting", since: up, attention: false }
-        return { tone: "run", label: "Running", since: up, attention: false }
+        t = m ? compactSpan(m[1]) : null
+        if (c.health === "unhealthy") return info("bad", "unhealthy", "Unhealthy", t, true)
+        if (c.health === "starting") return info("info", "starting", "Starting", t, false)
+        return info("run", "running", "Running", t, false)
     }
     if (s === "restarting") {
         m = /\) (.*?) ago/.exec(st)
-        return { tone: "bad", label: "Restarting", since: m ? compactSpan(m[1]) : "", attention: true }
+        return info("bad", "restarting", "Restarting", m ? compactSpan(m[1]) : null, true)
     }
-    if (s === "paused") return { tone: "warn", label: "Paused", since: "", attention: false }
+    if (s === "paused") return info("warn", "paused", "Paused", null, false)
     if (s === "exited" || s === "dead") {
         m = /Exited \((-?\d+)\) (.*?) ago/.exec(st)
         var code = m ? parseInt(m[1]) : 0
-        var when = m ? compactSpan(m[2]) : ""
-        if (code !== 0) return { tone: "fail", label: "Exited " + code, since: when, attention: true }
-        return { tone: "idle", label: "Stopped", since: when, attention: false }
+        t = m ? compactSpan(m[2]) : null
+        if (code !== 0) return info("fail", "exited", "Exited " + code, t, true, code)
+        return info("idle", "stopped", "Stopped", t, false)
     }
-    if (s === "created") return { tone: "idle", label: "Created", since: "", attention: false }
-    return { tone: "idle", label: s || "Unknown", since: "", attention: false }
+    if (s === "created") return info("idle", "created", "Created", null, false)
+    return info("idle", "unknown", s || "Unknown", null, false)
 }
 
 var NOT_WEB = { 22: 1, 25: 1, 1433: 1, 3306: 1, 5432: 1, 5433: 1, 5672: 1, 6379: 1, 9092: 1, 11211: 1, 27017: 1 }
@@ -130,7 +124,7 @@ function containerView(list, o) {
     order.forEach(function (g) {
         var members = groups[g]
         var collapsed = !!(o.collapsed && o.collapsed[g]) && !q
-        items.push({ key: "g:" + g, kind: "header", rid: g, label: g || "Standalone", count: members.length,
+        items.push({ key: "g:" + g, kind: "header", rid: g, label: g, count: members.length,
                      running: members.filter(function (c) { return c.state === "running" }).length, collapsed: collapsed })
         if (!collapsed) members.forEach(function (c) { items.push(row(c)) })
     })

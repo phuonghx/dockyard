@@ -1,0 +1,633 @@
+# 日本語 translation of Dockyard.
+# Copyright (C) 2026 Xuan-Phuong Hoang
+# This file is distributed under the same license as the Dockyard package.
+msgid ""
+msgstr ""
+"Project-Id-Version: dockyard 1.0.0\n"
+"Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
+"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"PO-Revision-Date: 2026-11-26 12:00+0700\n"
+"Last-Translator: Dockyard translators\n"
+"Language-Team: 日本語\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Expanded"
+msgstr "展開中"
+
+msgid "Collapsed"
+msgstr "折りたたみ中"
+
+msgid "Open http://localhost:%1"
+msgstr "http://localhost:%1 を開く"
+
+msgid "Copy localhost:%1"
+msgstr "localhost:%1 をコピー"
+
+msgid "Logs"
+msgstr "ログ"
+
+msgid "Restart"
+msgstr "再起動"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Start"
+msgstr "開始"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Memory"
+msgstr "メモリ"
+
+msgid "Network ↓ ↑"
+msgstr "ネットワーク ↓ ↑"
+
+msgid "Image"
+msgstr "イメージ"
+
+msgid "Compose"
+msgstr "Compose"
+
+msgid "Ports"
+msgstr "ポート"
+
+msgid "Open in browser"
+msgstr "ブラウザーで開く"
+
+msgid "Copy address"
+msgstr "アドレスをコピー"
+
+msgid "Network"
+msgstr "ネットワーク"
+
+msgid "Mounts"
+msgstr "マウント"
+
+msgid "Policy"
+msgstr "ポリシー"
+
+msgid "restarted %1 time"
+msgid_plural "restarted %1 times"
+msgstr[0] "%1 回再起動"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Copy full ID"
+msgstr "完全な ID をコピー"
+
+msgid "Shell"
+msgstr "シェル"
+
+msgid "Resume"
+msgstr "再開"
+
+msgid "Pause"
+msgstr "一時停止"
+
+msgid "Kill now?"
+msgstr "今すぐ強制停止しますか？"
+
+msgid "Kill"
+msgstr "強制停止"
+
+msgid "Remove for good?"
+msgstr "完全に削除しますか？"
+
+msgid "Remove"
+msgstr "削除"
+
+msgid "%1 container"
+msgid_plural "%1 containers"
+msgstr[0] "%1 個のコンテナー"
+
+msgid "Started %1"
+msgstr "%1 を開始しました"
+
+msgid "Stopped %1"
+msgstr "%1 を停止しました"
+
+msgid "Restarted %1"
+msgstr "%1 を再起動しました"
+
+msgid "Paused %1"
+msgstr "%1 を一時停止しました"
+
+msgid "Resumed %1"
+msgstr "%1 を再開しました"
+
+msgid "Killed %1"
+msgstr "%1 を強制停止しました"
+
+msgid "Removed %1"
+msgstr "%1 を削除しました"
+
+msgid "That didn't work"
+msgstr "うまくいきませんでした"
+
+msgid "Could not remove %1"
+msgstr "%1 を削除できませんでした"
+
+msgid "Reclaimed %1"
+msgstr "%1 を回収しました"
+
+msgid "Nothing to clean"
+msgstr "片付けるものはありません"
+
+msgid "Cleanup failed"
+msgstr "クリーンアップに失敗しました"
+
+msgid "Asking systemd to start Docker…"
+msgstr "systemd に Docker の起動を依頼しています…"
+
+msgid "Docker is up"
+msgstr "Docker が起動しました"
+
+msgid "Could not start Docker: %1"
+msgstr "Docker を起動できませんでした: %1"
+
+msgid "Could not start Docker"
+msgstr "Docker を起動できませんでした"
+
+msgid "Copied to clipboard"
+msgstr "クリップボードにコピーしました"
+
+msgid "Keep every container shipshape."
+msgstr "すべてのコンテナーを整然と。"
+
+msgid "Refresh now"
+msgstr "今すぐ更新"
+
+msgid "Configure Dockyard"
+msgstr "Dockyard を設定"
+
+msgctxt "unit, singular"
+msgid "core"
+msgstr "コア"
+
+msgctxt "unit, plural"
+msgid "cores"
+msgstr "コア"
+
+msgid "of %1 available"
+msgstr "利用可能 %1 中"
+
+msgid "of %1"
+msgstr "%1 中"
+
+msgctxt "filter: containers that are running"
+msgid "running"
+msgstr "実行中"
+
+msgctxt "filter: containers that need attention"
+msgid "need attention"
+msgstr "要注意"
+
+msgctxt "filter: containers that are stopped"
+msgid "stopped"
+msgstr "停止中"
+
+msgctxt "filter: containers that are paused"
+msgid "paused"
+msgstr "一時停止中"
+
+msgid "Containers"
+msgstr "コンテナー"
+
+msgid "Images"
+msgstr "イメージ"
+
+msgid "Volumes"
+msgstr "ボリューム"
+
+msgid "Networks"
+msgstr "ネットワーク"
+
+msgid "Search containers, images, ports"
+msgstr "コンテナー・イメージ・ポートを検索"
+
+msgid "Search images"
+msgstr "イメージを検索"
+
+msgid "Search volumes"
+msgstr "ボリュームを検索"
+
+msgid "Search networks"
+msgstr "ネットワークを検索"
+
+msgid "Grouped by Compose project"
+msgstr "Compose プロジェクトでグループ化中"
+
+msgid "Group by Compose project"
+msgstr "Compose プロジェクトでグループ化"
+
+msgid "Showing unused only"
+msgstr "未使用のみ表示中"
+
+msgid "Show unused only"
+msgstr "未使用のみ表示"
+
+msgid "Nothing matches “%1”"
+msgstr "「%1」に一致するものはありません"
+
+msgid "No containers in this state"
+msgstr "この状態のコンテナーはありません"
+
+msgid "Nothing unused. Tidy ship."
+msgstr "未使用のものはありません。船内は整頓されています。"
+
+msgid "The dockyard is empty"
+msgstr "ドックヤードは空です"
+
+msgid "No containers here"
+msgstr "コンテナーがありません"
+
+msgid "No images here"
+msgstr "イメージがありません"
+
+msgid "No volumes here"
+msgstr "ボリュームがありません"
+
+msgid "No networks here"
+msgstr "ネットワークがありません"
+
+msgid "Start a container and it will show up here."
+msgstr "コンテナーを起動すると、ここに表示されます。"
+
+msgid "Clear filters"
+msgstr "フィルターを解除"
+
+msgid "Copy a first command"
+msgstr "最初のコマンドをコピー"
+
+msgid "Docker isn't running"
+msgstr "Docker が実行されていません"
+
+msgid "Dockyard can't reach Docker yet"
+msgstr "Dockyard はまだ Docker に接続できません"
+
+msgid "No container engine found"
+msgstr "コンテナーエンジンが見つかりません"
+
+msgid "Something went wrong"
+msgstr "問題が発生しました"
+
+msgid ""
+"Your account isn't allowed to use the Docker socket. Add yourself to the "
+"docker group, then sign out and back in."
+msgstr ""
+"このアカウントには Docker ソケットを使う権限がありません。docker グループに追"
+"加して、ログインし直してください。"
+
+msgid ""
+"The socket exists but nothing is answering. Start the engine and Dockyard "
+"will pick it up."
+msgstr ""
+"ソケットはありますが応答がありません。エンジンを起動すると Dockyard が検出し"
+"ます。"
+
+msgid "Install Docker or enable Podman's socket, then reopen this panel."
+msgstr ""
+"Docker をインストールするか Podman のソケットを有効にして、このパネルを開き直"
+"してください。"
+
+msgid "Dockyard could not run its helper. Make sure python3 is installed."
+msgstr ""
+"Dockyard はヘルパーを実行できませんでした。python3 がインストールされているか"
+"確認してください。"
+
+msgid "Start Docker"
+msgstr "Docker を起動"
+
+msgid "Copy fix"
+msgstr "修正方法をコピー"
+
+msgid "Retry"
+msgstr "再試行"
+
+msgid "Engine unreachable"
+msgstr "エンジンに接続できません"
+
+msgid "Connecting…"
+msgstr "接続中…"
+
+msgid "rootless"
+msgstr "rootless"
+
+msgid "Free up %1"
+msgstr "%1 を解放"
+
+msgid "Free up space"
+msgstr "空き容量を確保"
+
+msgid "Standalone"
+msgstr "単独"
+
+msgid "%1/%2 running"
+msgstr "%1/%2 実行中"
+
+msgid "Start all"
+msgstr "すべて開始"
+
+msgid "Restart all"
+msgstr "すべて再起動"
+
+msgid "Stop all"
+msgstr "すべて停止"
+
+msgid "Could not read logs."
+msgstr "ログを読み取れませんでした。"
+
+msgid "Back to containers"
+msgstr "コンテナー一覧へ戻る"
+
+msgid "Container removed"
+msgstr "コンテナーは削除されました"
+
+msgid "Logs · last %1 lines"
+msgstr "ログ · 直近 %1 行"
+
+msgid "(trimmed)"
+msgstr "（省略あり）"
+
+msgid "Copy all"
+msgstr "すべてコピー"
+
+msgid "Container logs"
+msgstr "コンテナーのログ"
+
+msgid "Nothing logged yet"
+msgstr "まだログはありません"
+
+msgid "This container hasn't written anything to stdout or stderr."
+msgstr "このコンテナーは stdout にも stderr にも何も書き込んでいません。"
+
+msgid "Couldn't read the logs"
+msgstr "ログを読み取れませんでした"
+
+msgid "Refreshing…"
+msgstr "更新中…"
+
+msgid "Following new output"
+msgstr "新しい出力を追跡中"
+
+msgctxt "log view state"
+msgid "Paused"
+msgstr "一時停止中"
+
+msgid "Follow"
+msgstr "追跡"
+
+msgid "%1 running · %2 stopped"
+msgstr "%1 実行中 · %2 停止中"
+
+msgid "%1 need attention"
+msgstr "%1 件が要注意"
+
+msgid "%1 stopped unexpectedly"
+msgstr "%1 が予期せず停止しました"
+
+msgid "%1 is unhealthy"
+msgstr "%1 は異常です (unhealthy)"
+
+msgid "Health checks are failing"
+msgstr "ヘルスチェックが失敗しています"
+
+msgid "%1 is restart-looping"
+msgstr "%1 が再起動を繰り返しています"
+
+msgid "Stopped containers"
+msgstr "停止中のコンテナー"
+
+msgid "Removes exited and created containers"
+msgstr "終了済みおよび作成済みのコンテナーを削除します"
+
+msgid "Dangling images"
+msgstr "ぶら下がりイメージ"
+
+msgid "Untagged layers nothing refers to"
+msgstr "どこからも参照されていないタグなしのレイヤー"
+
+msgid "All unused images"
+msgstr "未使用のイメージすべて"
+
+msgid "Any image no container uses, tagged or not"
+msgstr "どのコンテナーも使っていないイメージ（タグの有無を問わない）"
+
+msgid "Anonymous volumes"
+msgstr "匿名ボリューム"
+
+msgid "Unnamed volumes no container uses. Named volumes stay."
+msgstr ""
+"どのコンテナーも使っていない名前なしボリューム。名前付きボリュームは残りま"
+"す。"
+
+msgid "Build cache"
+msgstr "ビルドキャッシュ"
+
+msgid "Cached layers from docker build"
+msgstr "docker build のキャッシュ済みレイヤー"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "This deletes their data for good."
+msgstr "これらのデータは完全に削除されます。"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Clean"
+msgstr "片付ける"
+
+msgid "<untagged>"
+msgstr "<タグなし>"
+
+msgid "internal"
+msgstr "内部"
+
+msgid "In use"
+msgstr "使用中"
+
+msgid "Dangling"
+msgstr "ぶら下がり"
+
+msgid "Unused"
+msgstr "未使用"
+
+msgid "anonymous"
+msgstr "匿名"
+
+msgid "system"
+msgstr "システム"
+
+msgid "Remove?"
+msgstr "削除しますか？"
+
+msgid "Remove image"
+msgstr "イメージを削除"
+
+msgid "Remove volume"
+msgstr "ボリュームを削除"
+
+msgid "Remove network"
+msgstr "ネットワークを削除"
+
+msgctxt "container state"
+msgid "Running"
+msgstr "実行中"
+
+msgctxt "container state"
+msgid "Starting"
+msgstr "起動中"
+
+msgctxt "container state"
+msgid "Unhealthy"
+msgstr "異常"
+
+msgctxt "container state"
+msgid "Restarting"
+msgstr "再起動中"
+
+msgctxt "container state"
+msgid "Paused"
+msgstr "一時停止中"
+
+msgctxt "container state, %1 is the exit code"
+msgid "Exited %1"
+msgstr "終了コード %1"
+
+msgctxt "container state"
+msgid "Stopped"
+msgstr "停止中"
+
+msgctxt "container state"
+msgid "Created"
+msgstr "作成済み"
+
+msgctxt "short duration, seconds"
+msgid "%1s"
+msgstr "%1秒"
+
+msgctxt "short duration, minutes"
+msgid "%1m"
+msgstr "%1分"
+
+msgctxt "short duration, hours"
+msgid "%1h"
+msgstr "%1時間"
+
+msgctxt "short duration, days"
+msgid "%1d"
+msgstr "%1日"
+
+msgctxt "short duration, weeks"
+msgid "%1w"
+msgstr "%1週"
+
+msgctxt "short duration, months"
+msgid "%1mo"
+msgstr "%1か月"
+
+msgctxt "short duration, years"
+msgid "%1y"
+msgstr "%1年"
+
+msgctxt "short duration, less than a second"
+msgid "now"
+msgstr "今"
+
+msgctxt "%1 is a short duration such as 3d"
+msgid "%1 ago"
+msgstr "%1前"
+
+msgctxt "relative time"
+msgid "just now"
+msgstr "たった今"
+
+msgctxt "relative time, minutes"
+msgid "%1m ago"
+msgstr "%1分前"
+
+msgctxt "relative time, hours"
+msgid "%1h ago"
+msgstr "%1時間前"
+
+msgctxt "relative time, days"
+msgid "%1d ago"
+msgstr "%1日前"
+
+msgctxt "relative time, months"
+msgid "%1mo ago"
+msgstr "%1か月前"
+
+msgctxt "relative time, years"
+msgid "%1y ago"
+msgstr "%1年前"
+
+msgid "Theme:"
+msgstr "テーマ:"
+
+msgid "Follow the Plasma colour scheme"
+msgstr "Plasma の配色に従う"
+
+msgid "Always dark (harbour at night)"
+msgstr "常にダーク（夜のドックヤード）"
+
+msgid "Always light"
+msgstr "常にライト"
+
+msgid "Open on:"
+msgstr "起動時のタブ:"
+
+msgid "Containers:"
+msgstr "コンテナー:"
+
+msgid "Panel icon:"
+msgstr "パネルのアイコン:"
+
+msgid "Show the running count next to the icon"
+msgstr "実行中の数をアイコンの横に表示"
+
+msgid "Engine socket:"
+msgstr "エンジンのソケット:"
+
+msgid ""
+"Leave it on auto to find Docker, rootless Docker and Podman, or enter a "
+"socket path."
+msgstr ""
+"auto のままにすると Docker、rootless Docker、Podman を自動検出します。ソケッ"
+"トのパスも指定できます。"
+
+msgid "Refresh while open:"
+msgstr "開いている間の更新間隔:"
+
+msgid "%1 s"
+msgstr "%1 秒"
+
+msgid "Refresh in the background:"
+msgstr "バックグラウンドでの更新間隔:"
+
+msgid "Container CLI:"
+msgstr "コンテナー CLI:"
+
+msgid "Terminal command:"
+msgstr "ターミナルのコマンド:"
+
+msgid "Notifications:"
+msgstr "通知:"
+
+msgid "Tell me when a container crashes, turns unhealthy or restart-loops"
+msgstr "コンテナーのクラッシュ、unhealthy、再起動ループを通知する"
+
+msgid "Engine"
+msgstr "エンジン"
+
+msgid "Appearance"
+msgstr "外観"

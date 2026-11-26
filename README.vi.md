@@ -36,6 +36,11 @@ Mỗi trạng thái có **hình dạng riêng** ngoài màu sắc (tròn đặc 
 
 <p align="center"><img src="docs/images/overview-dark.png" width="300"> <img src="docs/images/overview-light.png" width="300"></p>
 
+## Ngôn ngữ
+Dockyard tự theo ngôn ngữ hệ thống. Hiện có: **English, Tiếng Việt, Español, Français, Deutsch, Português (Brasil), Русский, 日本語, 简体中文**. Muốn thêm ngôn ngữ: xem mục *Translating* trong [CONTRIBUTING.md](CONTRIBUTING.md#translating), chỉ cần sửa một file, không cần biết lập trình.
+
+<p align="center"><img src="docs/images/languages.png" width="860"></p>
+
 ## Cấu hình
 Chuột phải widget → **Configure Dockyard**: socket, tần suất làm mới, terminal, thông báo, giao diện (theo Plasma / luôn tối / luôn sáng), tab mở đầu, nhóm theo Compose, hiện số container đang chạy cạnh icon.
 

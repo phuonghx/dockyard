@@ -1,0 +1,628 @@
+# Tiếng Việt translation of Dockyard.
+# Copyright (C) 2026 Xuan-Phuong Hoang
+# This file is distributed under the same license as the Dockyard package.
+msgid ""
+msgstr ""
+"Project-Id-Version: dockyard 1.0.0\n"
+"Report-Msgid-Bugs-To: phuonghx.me@gmail.com\n"
+"POT-Creation-Date: 2026-11-26 18:03+0700\n"
+"PO-Revision-Date: 2026-11-26 12:00+0700\n"
+"Last-Translator: Dockyard translators\n"
+"Language-Team: Tiếng Việt\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Expanded"
+msgstr "Đã mở rộng"
+
+msgid "Collapsed"
+msgstr "Đã thu gọn"
+
+msgid "Open http://localhost:%1"
+msgstr "Mở http://localhost:%1"
+
+msgid "Copy localhost:%1"
+msgstr "Sao chép localhost:%1"
+
+msgid "Logs"
+msgstr "Nhật ký"
+
+msgid "Restart"
+msgstr "Khởi động lại"
+
+msgid "Stop"
+msgstr "Dừng"
+
+msgid "Start"
+msgstr "Chạy"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Memory"
+msgstr "Bộ nhớ"
+
+msgid "Network ↓ ↑"
+msgstr "Mạng ↓ ↑"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Compose"
+msgstr "Compose"
+
+msgid "Ports"
+msgstr "Cổng"
+
+msgid "Open in browser"
+msgstr "Mở trong trình duyệt"
+
+msgid "Copy address"
+msgstr "Sao chép địa chỉ"
+
+msgid "Network"
+msgstr "Mạng"
+
+msgid "Mounts"
+msgstr "Ổ gắn"
+
+msgid "Policy"
+msgstr "Chính sách"
+
+msgid "restarted %1 time"
+msgid_plural "restarted %1 times"
+msgstr[0] "đã khởi động lại %1 lần"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Copy full ID"
+msgstr "Sao chép ID đầy đủ"
+
+msgid "Shell"
+msgstr "Shell"
+
+msgid "Resume"
+msgstr "Tiếp tục"
+
+msgid "Pause"
+msgstr "Tạm dừng"
+
+msgid "Kill now?"
+msgstr "Buộc dừng ngay?"
+
+msgid "Kill"
+msgstr "Buộc dừng"
+
+msgid "Remove for good?"
+msgstr "Xoá vĩnh viễn?"
+
+msgid "Remove"
+msgstr "Xoá"
+
+msgid "%1 container"
+msgid_plural "%1 containers"
+msgstr[0] "%1 container"
+
+msgid "Started %1"
+msgstr "Đã chạy %1"
+
+msgid "Stopped %1"
+msgstr "Đã dừng %1"
+
+msgid "Restarted %1"
+msgstr "Đã khởi động lại %1"
+
+msgid "Paused %1"
+msgstr "Đã tạm dừng %1"
+
+msgid "Resumed %1"
+msgstr "Đã tiếp tục %1"
+
+msgid "Killed %1"
+msgstr "Đã buộc dừng %1"
+
+msgid "Removed %1"
+msgstr "Đã xoá %1"
+
+msgid "That didn't work"
+msgstr "Không thực hiện được"
+
+msgid "Could not remove %1"
+msgstr "Không xoá được %1"
+
+msgid "Reclaimed %1"
+msgstr "Đã thu hồi %1"
+
+msgid "Nothing to clean"
+msgstr "Không có gì để dọn"
+
+msgid "Cleanup failed"
+msgstr "Dọn dẹp thất bại"
+
+msgid "Asking systemd to start Docker…"
+msgstr "Đang nhờ systemd khởi động Docker…"
+
+msgid "Docker is up"
+msgstr "Docker đã chạy"
+
+msgid "Could not start Docker: %1"
+msgstr "Không khởi động được Docker: %1"
+
+msgid "Could not start Docker"
+msgstr "Không khởi động được Docker"
+
+msgid "Copied to clipboard"
+msgstr "Đã sao chép vào bộ nhớ tạm"
+
+msgid "Keep every container shipshape."
+msgstr "Giữ mọi container luôn gọn gàng."
+
+msgid "Refresh now"
+msgstr "Làm mới ngay"
+
+msgid "Configure Dockyard"
+msgstr "Cấu hình Dockyard"
+
+msgctxt "unit, singular"
+msgid "core"
+msgstr "nhân"
+
+msgctxt "unit, plural"
+msgid "cores"
+msgstr "nhân"
+
+msgid "of %1 available"
+msgstr "trên tổng %1"
+
+msgid "of %1"
+msgstr "trên %1"
+
+msgctxt "filter: containers that are running"
+msgid "running"
+msgstr "đang chạy"
+
+msgctxt "filter: containers that need attention"
+msgid "need attention"
+msgstr "cần chú ý"
+
+msgctxt "filter: containers that are stopped"
+msgid "stopped"
+msgstr "đã dừng"
+
+msgctxt "filter: containers that are paused"
+msgid "paused"
+msgstr "tạm dừng"
+
+msgid "Containers"
+msgstr "Container"
+
+msgid "Images"
+msgstr "Image"
+
+msgid "Volumes"
+msgstr "Volume"
+
+msgid "Networks"
+msgstr "Mạng"
+
+msgid "Search containers, images, ports"
+msgstr "Tìm container, image, cổng"
+
+msgid "Search images"
+msgstr "Tìm image"
+
+msgid "Search volumes"
+msgstr "Tìm volume"
+
+msgid "Search networks"
+msgstr "Tìm mạng"
+
+msgid "Grouped by Compose project"
+msgstr "Đang nhóm theo dự án Compose"
+
+msgid "Group by Compose project"
+msgstr "Nhóm theo dự án Compose"
+
+msgid "Showing unused only"
+msgstr "Đang chỉ hiện mục không dùng"
+
+msgid "Show unused only"
+msgstr "Chỉ hiện mục không dùng"
+
+msgid "Nothing matches “%1”"
+msgstr "Không có kết quả cho “%1”"
+
+msgid "No containers in this state"
+msgstr "Không có container nào ở trạng thái này"
+
+msgid "Nothing unused. Tidy ship."
+msgstr "Không có gì thừa. Tàu gọn gàng."
+
+msgid "The dockyard is empty"
+msgstr "Xưởng tàu đang trống"
+
+msgid "No containers here"
+msgstr "Chưa có container"
+
+msgid "No images here"
+msgstr "Chưa có image"
+
+msgid "No volumes here"
+msgstr "Chưa có volume"
+
+msgid "No networks here"
+msgstr "Chưa có mạng"
+
+msgid "Start a container and it will show up here."
+msgstr "Khởi chạy một container và nó sẽ hiện ở đây."
+
+msgid "Clear filters"
+msgstr "Xoá bộ lọc"
+
+msgid "Copy a first command"
+msgstr "Sao chép lệnh đầu tiên"
+
+msgid "Docker isn't running"
+msgstr "Docker chưa chạy"
+
+msgid "Dockyard can't reach Docker yet"
+msgstr "Dockyard chưa kết nối được Docker"
+
+msgid "No container engine found"
+msgstr "Không tìm thấy engine container"
+
+msgid "Something went wrong"
+msgstr "Đã xảy ra lỗi"
+
+msgid ""
+"Your account isn't allowed to use the Docker socket. Add yourself to the "
+"docker group, then sign out and back in."
+msgstr ""
+"Tài khoản của bạn chưa được phép dùng socket Docker. Hãy thêm mình vào nhóm "
+"docker, rồi đăng xuất và đăng nhập lại."
+
+msgid ""
+"The socket exists but nothing is answering. Start the engine and Dockyard "
+"will pick it up."
+msgstr ""
+"Socket tồn tại nhưng không có phản hồi. Hãy khởi động engine, Dockyard sẽ tự "
+"nhận ra."
+
+msgid "Install Docker or enable Podman's socket, then reopen this panel."
+msgstr "Hãy cài Docker hoặc bật socket của Podman, rồi mở lại bảng này."
+
+msgid "Dockyard could not run its helper. Make sure python3 is installed."
+msgstr ""
+"Dockyard không chạy được trình trợ giúp. Hãy chắc là python3 đã được cài."
+
+msgid "Start Docker"
+msgstr "Khởi động Docker"
+
+msgid "Copy fix"
+msgstr "Sao chép cách sửa"
+
+msgid "Retry"
+msgstr "Thử lại"
+
+msgid "Engine unreachable"
+msgstr "Không kết nối được engine"
+
+msgid "Connecting…"
+msgstr "Đang kết nối…"
+
+msgid "rootless"
+msgstr "rootless"
+
+msgid "Free up %1"
+msgstr "Giải phóng %1"
+
+msgid "Free up space"
+msgstr "Giải phóng dung lượng"
+
+msgid "Standalone"
+msgstr "Độc lập"
+
+msgid "%1/%2 running"
+msgstr "%1/%2 đang chạy"
+
+msgid "Start all"
+msgstr "Chạy tất cả"
+
+msgid "Restart all"
+msgstr "Khởi động lại tất cả"
+
+msgid "Stop all"
+msgstr "Dừng tất cả"
+
+msgid "Could not read logs."
+msgstr "Không đọc được nhật ký."
+
+msgid "Back to containers"
+msgstr "Quay lại danh sách container"
+
+msgid "Container removed"
+msgstr "Container đã bị xoá"
+
+msgid "Logs · last %1 lines"
+msgstr "Nhật ký · %1 dòng cuối"
+
+msgid "(trimmed)"
+msgstr "(đã cắt bớt)"
+
+msgid "Copy all"
+msgstr "Sao chép tất cả"
+
+msgid "Container logs"
+msgstr "Nhật ký container"
+
+msgid "Nothing logged yet"
+msgstr "Chưa có nhật ký"
+
+msgid "This container hasn't written anything to stdout or stderr."
+msgstr "Container này chưa ghi gì ra stdout hay stderr."
+
+msgid "Couldn't read the logs"
+msgstr "Không đọc được nhật ký"
+
+msgid "Refreshing…"
+msgstr "Đang làm mới…"
+
+msgid "Following new output"
+msgstr "Đang theo dõi đầu ra mới"
+
+msgctxt "log view state"
+msgid "Paused"
+msgstr "Đã tạm dừng"
+
+msgid "Follow"
+msgstr "Theo dõi"
+
+msgid "%1 running · %2 stopped"
+msgstr "%1 đang chạy · %2 đã dừng"
+
+msgid "%1 need attention"
+msgstr "%1 cần chú ý"
+
+msgid "%1 stopped unexpectedly"
+msgstr "%1 đã dừng bất ngờ"
+
+msgid "%1 is unhealthy"
+msgstr "%1 không khoẻ (unhealthy)"
+
+msgid "Health checks are failing"
+msgstr "Kiểm tra sức khoẻ đang thất bại"
+
+msgid "%1 is restart-looping"
+msgstr "%1 đang khởi động lại liên tục"
+
+msgid "Stopped containers"
+msgstr "Container đã dừng"
+
+msgid "Removes exited and created containers"
+msgstr "Xoá các container đã thoát và mới tạo"
+
+msgid "Dangling images"
+msgstr "Image mồ côi"
+
+msgid "Untagged layers nothing refers to"
+msgstr "Các lớp không gắn thẻ và không ai dùng"
+
+msgid "All unused images"
+msgstr "Mọi image không dùng"
+
+msgid "Any image no container uses, tagged or not"
+msgstr "Mọi image không container nào dùng, có thẻ hay không"
+
+msgid "Anonymous volumes"
+msgstr "Volume ẩn danh"
+
+msgid "Unnamed volumes no container uses. Named volumes stay."
+msgstr "Volume không tên không container nào dùng. Volume có tên được giữ lại."
+
+msgid "Build cache"
+msgstr "Cache build"
+
+msgid "Cached layers from docker build"
+msgstr "Các lớp được lưu khi docker build"
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "This deletes their data for good."
+msgstr "Việc này xoá vĩnh viễn dữ liệu của chúng."
+
+msgid "Confirm"
+msgstr "Xác nhận"
+
+msgid "Clean"
+msgstr "Dọn"
+
+msgid "<untagged>"
+msgstr "<chưa gắn thẻ>"
+
+msgid "internal"
+msgstr "nội bộ"
+
+msgid "In use"
+msgstr "Đang dùng"
+
+msgid "Dangling"
+msgstr "Mồ côi"
+
+msgid "Unused"
+msgstr "Không dùng"
+
+msgid "anonymous"
+msgstr "ẩn danh"
+
+msgid "system"
+msgstr "hệ thống"
+
+msgid "Remove?"
+msgstr "Xoá?"
+
+msgid "Remove image"
+msgstr "Xoá image"
+
+msgid "Remove volume"
+msgstr "Xoá volume"
+
+msgid "Remove network"
+msgstr "Xoá mạng"
+
+msgctxt "container state"
+msgid "Running"
+msgstr "Đang chạy"
+
+msgctxt "container state"
+msgid "Starting"
+msgstr "Đang khởi động"
+
+msgctxt "container state"
+msgid "Unhealthy"
+msgstr "Không khoẻ"
+
+msgctxt "container state"
+msgid "Restarting"
+msgstr "Đang khởi động lại"
+
+msgctxt "container state"
+msgid "Paused"
+msgstr "Tạm dừng"
+
+msgctxt "container state, %1 is the exit code"
+msgid "Exited %1"
+msgstr "Đã thoát %1"
+
+msgctxt "container state"
+msgid "Stopped"
+msgstr "Đã dừng"
+
+msgctxt "container state"
+msgid "Created"
+msgstr "Đã tạo"
+
+msgctxt "short duration, seconds"
+msgid "%1s"
+msgstr "%1s"
+
+msgctxt "short duration, minutes"
+msgid "%1m"
+msgstr "%1m"
+
+msgctxt "short duration, hours"
+msgid "%1h"
+msgstr "%1h"
+
+msgctxt "short duration, days"
+msgid "%1d"
+msgstr "%1d"
+
+msgctxt "short duration, weeks"
+msgid "%1w"
+msgstr "%1w"
+
+msgctxt "short duration, months"
+msgid "%1mo"
+msgstr "%1mo"
+
+msgctxt "short duration, years"
+msgid "%1y"
+msgstr "%1y"
+
+msgctxt "short duration, less than a second"
+msgid "now"
+msgstr "vừa xong"
+
+msgctxt "%1 is a short duration such as 3d"
+msgid "%1 ago"
+msgstr "%1 trước"
+
+msgctxt "relative time"
+msgid "just now"
+msgstr "vừa xong"
+
+msgctxt "relative time, minutes"
+msgid "%1m ago"
+msgstr "%1 phút trước"
+
+msgctxt "relative time, hours"
+msgid "%1h ago"
+msgstr "%1 giờ trước"
+
+msgctxt "relative time, days"
+msgid "%1d ago"
+msgstr "%1 ngày trước"
+
+msgctxt "relative time, months"
+msgid "%1mo ago"
+msgstr "%1 tháng trước"
+
+msgctxt "relative time, years"
+msgid "%1y ago"
+msgstr "%1 năm trước"
+
+msgid "Theme:"
+msgstr "Giao diện:"
+
+msgid "Follow the Plasma colour scheme"
+msgstr "Theo bảng màu Plasma"
+
+msgid "Always dark (harbour at night)"
+msgstr "Luôn tối (xưởng tàu về đêm)"
+
+msgid "Always light"
+msgstr "Luôn sáng"
+
+msgid "Open on:"
+msgstr "Mở ở tab:"
+
+msgid "Containers:"
+msgstr "Container:"
+
+msgid "Panel icon:"
+msgstr "Icon trên panel:"
+
+msgid "Show the running count next to the icon"
+msgstr "Hiện số container đang chạy cạnh icon"
+
+msgid "Engine socket:"
+msgstr "Socket của engine:"
+
+msgid ""
+"Leave it on auto to find Docker, rootless Docker and Podman, or enter a "
+"socket path."
+msgstr ""
+"Để auto để tự tìm Docker, Docker rootless và Podman, hoặc nhập đường dẫn "
+"socket."
+
+msgid "Refresh while open:"
+msgstr "Làm mới khi đang mở:"
+
+msgid "%1 s"
+msgstr "%1 giây"
+
+msgid "Refresh in the background:"
+msgstr "Làm mới ở chế độ nền:"
+
+msgid "Container CLI:"
+msgstr "CLI container:"
+
+msgid "Terminal command:"
+msgstr "Lệnh terminal:"
+
+msgid "Notifications:"
+msgstr "Thông báo:"
+
+msgid "Tell me when a container crashes, turns unhealthy or restart-loops"
+msgstr "Báo cho tôi khi container crash, unhealthy hoặc khởi động lại liên tục"
+
+msgid "Engine"
+msgstr "Engine"
+
+msgid "Appearance"
+msgstr "Hiển thị"

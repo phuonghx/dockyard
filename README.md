@@ -77,6 +77,14 @@ Plain language and the exact fix, instead of a stack trace.
 
 <p align="center"><img src="docs/images/error-not-running.png" width="240" alt="Docker is not running"> <img src="docs/images/error-permission.png" width="240" alt="No permission"> <img src="docs/images/error-no-engine.png" width="240" alt="No engine found"> <img src="docs/images/empty.png" width="240" alt="Empty state"></p>
 
+## Speaks your language
+Dockyard follows your system language automatically. Included: **English, Tiếng Việt, Español, Français, Deutsch, Português (Brasil), Русский, 日本語, 简体中文**.
+Machine-checked for completeness (every message is translated in every language), written to read naturally rather than word for word.
+
+<p align="center"><img src="docs/images/languages.png" alt="Dockyard in Vietnamese, German, Russian and Japanese" width="860"></p>
+
+Want another language, or a better phrase? It takes one file and no code. See [Translating](CONTRIBUTING.md#translating).
+
 ## Settings
 Right-click the widget → **Configure Dockyard**.
 

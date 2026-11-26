@@ -25,7 +25,7 @@ KCM.SimpleKCM {
             placeholderText: "auto"
         }
         QQC2.Label {
-            text: i18n("“auto” finds Docker, rootless Docker and Podman. Or use a path such as /run/user/1000/podman/podman.sock.")
+            text: i18n("Leave it on auto to find Docker, rootless Docker and Podman, or enter a socket path.")
             wrapMode: Text.WordWrap
             Layout.maximumWidth: Kirigami.Units.gridUnit * 22
             font: Kirigami.Theme.smallFont

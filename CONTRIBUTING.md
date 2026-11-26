@@ -45,6 +45,22 @@ Dockyard is an Operate-mode tool: it should disappear into the task.
   objects on every refresh; it flashes and resets scrolling.
 - Respect the Plasma colour scheme and the user's font size.
 
+## Translating
+Translations use standard gettext files in `po/`. You do not need to know QML.
+
+```bash
+tools/i18n.sh new it          # start Italian: creates po/it.po from the template
+# translate po/it.po with any PO editor (Lokalize, Poedit) or a text editor
+tools/i18n.sh compile         # builds the .mo files into the package
+tools/i18n.sh check           # no fuzzy, empty or broken entries
+./install.sh && LANGUAGE=it plasmawindowed io.dockyard.widget
+```
+- Keep placeholders such as `%1` and `%2` exactly as they are. They are filled in at run time.
+- Read the context in the comments of the `.pot` file. For example *Paused* appears as a container state and as a log state.
+- Keep short durations compact (`3d`, `9h`); use your language's usual abbreviations.
+- If you change or add UI text in the code, always wrap it in `i18n("...")`, then run `tools/i18n.sh all`.
+- Singletons and `logic.js` cannot reach the catalogue: they emit codes and the UI (`Tr.qml`, `Full.qml`) turns them into words.
+
 ## Code style
 - Python: stdlib only, type hints where they help, no traceback ever reaches the widget (errors become JSON).
 - QML: 4 spaces, one component per file, register new components in `qmldir`.

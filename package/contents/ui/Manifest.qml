@@ -20,6 +20,7 @@ Item {
             model: m.count
             delegate: Rectangle {
                 id: cell
+                Tr { id: tr }
                 required property int index
                 readonly property var c: { Backend.revision; return Backend.ordered[index] || null }
                 readonly property var st: c ? L.statusInfo(c) : ({ tone: "idle", label: "" })
@@ -54,7 +55,7 @@ Item {
                 }
                 QQC2.ToolTip.visible: ma.containsMouse && !!cell.c
                 QQC2.ToolTip.delay: 150
-                QQC2.ToolTip.text: cell.c ? cell.c.name + " · " + cell.st.label : ""
+                QQC2.ToolTip.text: cell.c ? cell.c.name + " · " + tr.status(cell.st) : ""
             }
         }
     }

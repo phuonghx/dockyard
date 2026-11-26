@@ -31,11 +31,11 @@ Item {
         const stopped = Backend.containers.filter(c => c.state === "exited" || c.state === "dead" || c.state === "created")
         const sum = a => a.reduce((s, i) => s + i.size, 0)
         return [
-            { key: "containers", title: "Stopped containers", note: "Removes exited and created containers", n: stopped.length, size: df ? df.containersReclaimable : 0 },
-            { key: "images", title: "Dangling images", note: "Untagged layers nothing refers to", n: dangling.length, size: sum(dangling) },
-            { key: "images-all", title: "All unused images", note: "Any image no container uses, tagged or not", n: unusedImgs.length, size: sum(unusedImgs) },
-            { key: "volumes", title: "Anonymous volumes", note: "Unnamed volumes no container uses. Named volumes stay.", n: anon.length, size: df ? anon.reduce((s, v) => s + Math.max(0, (df.volumeSizes[v.name] || 0)), 0) : 0, risky: true },
-            { key: "builder", title: "Build cache", note: "Cached layers from docker build", n: df && df.cacheReclaimable > 0 ? 1 : 0, size: df ? df.cacheReclaimable : 0 }
+            { key: "containers", title: i18n("Stopped containers"), note: i18n("Removes exited and created containers"), n: stopped.length, size: df ? df.containersReclaimable : 0 },
+            { key: "images", title: i18n("Dangling images"), note: i18n("Untagged layers nothing refers to"), n: dangling.length, size: sum(dangling) },
+            { key: "images-all", title: i18n("All unused images"), note: i18n("Any image no container uses, tagged or not"), n: unusedImgs.length, size: sum(unusedImgs) },
+            { key: "volumes", title: i18n("Anonymous volumes"), note: i18n("Unnamed volumes no container uses. Named volumes stay."), n: anon.length, size: df ? anon.reduce((s, v) => s + Math.max(0, (df.volumeSizes[v.name] || 0)), 0) : 0, risky: true },
+            { key: "builder", title: i18n("Build cache"), note: i18n("Cached layers from docker build"), n: df && df.cacheReclaimable > 0 ? 1 : 0, size: df ? df.cacheReclaimable : 0 }
         ]
     }
 
@@ -61,8 +61,8 @@ Item {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Theme.s(6)
                 Glyph { name: "broom"; size: Theme.s(16); color: Theme.acc }
-                Txt { text: "Free up space"; kind: "head"; strong: true; Layout.fillWidth: true }
-                IconButton { symbol: "close"; tip: "Close"; onClicked: p.dismissed() }
+                Txt { text: i18n("Free up space"); kind: "head"; strong: true; Layout.fillWidth: true }
+                IconButton { symbol: "close"; tip: i18n("Close"); onClicked: p.dismissed() }
             }
 
             Repeater {
@@ -84,12 +84,12 @@ Item {
                             Layout.fillWidth: true
                             spacing: Theme.s(2)
                             Txt { text: modelData.title + (modelData.n ? "  ·  " + modelData.n : ""); kind: "small"; strong: true; elide: Text.ElideRight; Layout.fillWidth: true }
-                            Txt { text: item.armedHere && modelData.risky ? "This deletes their data for good." : modelData.note; kind: "tiny"
+                            Txt { text: item.armedHere && modelData.risky ? i18n("This deletes their data for good.") : modelData.note; kind: "tiny"
                                   color: item.armedHere && modelData.risky ? Theme.bad : Theme.tx3; elide: Text.ElideRight; Layout.fillWidth: true }
                         }
                         Txt { text: modelData.size > 0 ? L.fmtBytes(modelData.size) : "—"; kind: "monoSm"; color: modelData.size > 0 ? Theme.tx : Theme.tx3 }
                         IconButton {
-                            label: item.armedHere ? "Confirm" : "Clean"
+                            label: item.armedHere ? i18n("Confirm") : i18n("Clean")
                             armed: item.armedHere
                             tone: "accent"
                             enabled: modelData.n > 0

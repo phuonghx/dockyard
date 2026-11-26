@@ -14,11 +14,12 @@ Rectangle {
     property string html: ""
     property string failure: ""
     property bool truncated: false
+    Tr { id: tr }
     signal closed()
 
     color: Theme.surface
     readonly property var c: { Backend.revision; return Backend.cmap[cid] || null }
-    readonly property var st: c ? L.statusInfo(c) : ({ tone: "idle", label: "" })
+    readonly property var st: c ? L.statusInfo(c) : ({ tone: "idle", key: "unknown", raw: "" })
 
     function open(id) { cid = id; raw = ""; html = ""; failure = ""; follow = true; load() }
     function load() {
@@ -26,7 +27,7 @@ Rectangle {
         loading = true
         Backend.logs(cid, tail, d => {
             loading = false
-            if (!d.ok) { failure = d.message || "Could not read logs."; return }
+            if (!d.ok) { failure = d.message || i18n("Could not read logs."); return }
             failure = ""
             truncated = d.truncated
             if (d.text === raw) return
@@ -52,18 +53,18 @@ Rectangle {
             RowLayout {
                 anchors { fill: parent; leftMargin: Theme.s(8); rightMargin: Theme.s(10) }
                 spacing: Theme.s(8)
-                IconButton { symbol: "back"; tip: "Back to containers"; onClicked: p.closed(); Keys.onEscapePressed: p.closed() }
+                IconButton { symbol: "back"; tip: i18n("Back to containers"); onClicked: p.closed(); Keys.onEscapePressed: p.closed() }
                 StatusDot { tone: p.st.tone }
                 ColumnLayout {
                     Layout.fillWidth: true
                     spacing: Theme.s(1)
-                    Txt { Layout.fillWidth: true; text: p.c ? p.c.name : "Container removed"; kind: "head"; strong: true; elide: Text.ElideRight }
-                    Txt { text: "Logs · last " + p.tail + " lines" + (p.truncated ? " (trimmed)" : ""); kind: "tiny"; color: Theme.tx3 }
+                    Txt { Layout.fillWidth: true; text: p.c ? p.c.name : i18n("Container removed"); kind: "head"; strong: true; elide: Text.ElideRight }
+                    Txt { text: i18n("Logs · last %1 lines", p.tail) + (p.truncated ? " " + i18n("(trimmed)") : ""); kind: "tiny"; color: Theme.tx3 }
                 }
                 Chip { text: "100"; clickable: true; selected: p.tail === 100; onClicked: p.tail = 100; tone: p.tail === 100 ? "accent" : "neutral" }
                 Chip { text: "300"; clickable: true; selected: p.tail === 300; onClicked: p.tail = 300; tone: p.tail === 300 ? "accent" : "neutral" }
                 Chip { text: "1000"; clickable: true; selected: p.tail === 1000; onClicked: p.tail = 1000; tone: p.tail === 1000 ? "accent" : "neutral" }
-                IconButton { symbol: "copy"; tip: "Copy all"; onClicked: { Backend.copy(p.raw) } }
+                IconButton { symbol: "copy"; tip: i18n("Copy all"); onClicked: { Backend.copy(p.raw) } }
             }
             Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 1; color: Theme.line }
         }
@@ -98,20 +99,20 @@ Rectangle {
                     selectionColor: Theme.alpha(Theme.acc, 0.35)
                     selectedTextColor: Theme.tx
                     Accessible.role: Accessible.StaticText
-                    Accessible.name: "Container logs"
+                    Accessible.name: i18n("Container logs")
                 }
             }
 
             EmptyState {
                 anchors.fill: parent
                 visible: !p.loading && p.failure === "" && p.raw === ""
-                icon: "logs"; title: "Nothing logged yet"
-                body: "This container hasn't written anything to stdout or stderr."
+                icon: "logs"; title: i18n("Nothing logged yet")
+                body: i18n("This container hasn't written anything to stdout or stderr.")
             }
             EmptyState {
                 anchors.fill: parent
                 visible: p.failure !== ""
-                icon: "warning"; tone: "bad"; title: "Couldn't read the logs"; body: p.failure
+                icon: "warning"; tone: "bad"; title: i18n("Couldn't read the logs"); body: p.failure
             }
         }
 
@@ -123,14 +124,14 @@ Rectangle {
             Rectangle { anchors.top: parent.top; width: parent.width; height: 1; color: Theme.line }
             RowLayout {
                 anchors { fill: parent; leftMargin: Theme.s(12); rightMargin: Theme.s(10) }
-                Txt { text: p.loading ? "Refreshing…" : (p.follow ? "Following new output" : "Paused"); kind: "tiny"; color: Theme.tx3; Layout.fillWidth: true }
+                Txt { text: p.loading ? i18n("Refreshing…") : (p.follow ? i18n("Following new output") : i18nc("log view state", "Paused")); kind: "tiny"; color: Theme.tx3; Layout.fillWidth: true }
                 IconButton {
                     symbol: p.follow ? "pause" : "play"
-                    label: p.follow ? "Pause" : "Follow"
+                    label: p.follow ? i18n("Pause") : i18n("Follow")
                     tone: p.follow ? "neutral" : "accent"
                     onClicked: { p.follow = !p.follow; if (p.follow) { p.load(); p.toEnd() } }
                 }
-                IconButton { symbol: "refresh"; tip: "Refresh now"; busy: p.loading; onClicked: p.load() }
+                IconButton { symbol: "refresh"; tip: i18n("Refresh now"); busy: p.loading; onClicked: p.load() }
             }
         }
     }
