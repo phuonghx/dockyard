@@ -79,7 +79,9 @@ nav.main a.lang{border:1px solid var(--line2);color:var(--tx)}
 .row .txt li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--acc)}
 .pic{display:flex;gap:16px;justify-content:center}
 .pic img{border-radius:12px;border:1px solid var(--line2);width:min(100%,360px)}
-.pic.two img{width:calc(50% - 8px)}
+.pic.two{align-items:flex-start}
+.pic.two picture{flex:1 1 0;min-width:0}
+.pic.two img{width:100%}
 .wide{margin-top:34px}.wide img{width:100%;border-radius:var(--r);border:1px solid var(--line2)}
 @media(max-width:860px){.row,.row.flip{grid-template-columns:1fr;gap:28px}.row.flip .txt{order:0}}
 
