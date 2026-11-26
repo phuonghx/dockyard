@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/images/icon.png" width="96" alt="Dockyard"></p>
+<p align="center"><img src="docs/images/banner.png" alt="Dockyard: widget Docker và Podman cho KDE Plasma 6" width="100%"></p>
 
 <h1 align="center">Dockyard</h1>
 <p align="center"><b>Giữ mọi container luôn gọn gàng.</b><br>
@@ -6,7 +6,7 @@ Widget Plasma 6 đẹp và nhanh để theo dõi và quản lý Docker, Podman n
 
 <p align="center"><img src="docs/images/hero.png" alt="Dockyard"></p>
 
-[English](README.md)
+[English](README.md) · [Trang web](https://phuonghx.github.io/dockyard/vi/)
 
 ## Điểm nổi bật
 - **Nhìn một lần là nắm hết:** dải *manifest* vẽ cả hệ thống thành một hàng ô, mỗi container một ô, đổi màu theo trạng thái. Bấm vào ô để nhảy tới container đó.

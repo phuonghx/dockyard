@@ -1,8 +1,10 @@
-<p align="center"><img src="docs/images/icon.png" width="96" alt="Dockyard"></p>
+<p align="center"><img src="docs/images/banner.png" alt="Dockyard: Docker and Podman widget for KDE Plasma 6. Keep every container shipshape." width="100%"></p>
 
 <h1 align="center">Dockyard</h1>
 <p align="center"><b>Keep every container shipshape.</b><br>
-A fast, good-looking Plasma 6 widget to watch and manage Docker and Podman, right from your panel.</p>
+A fast, good-looking <b>KDE Plasma 6 widget for Docker and Podman</b>: watch and manage containers, images, volumes and logs right from your panel. Made for Fedora KDE.</p>
+
+<p align="center"><a href="https://phuonghx.github.io/dockyard/"><b>Website</b></a> · <a href="#install">Install</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="CONTRIBUTING.md">Contribute</a></p>
 
 <p align="center">
   <a href="LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-2dd4bf"></a>

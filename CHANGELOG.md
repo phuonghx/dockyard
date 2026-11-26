@@ -17,6 +17,7 @@ versions follow [Semantic Versioning](https://semver.org).
 - Docker, rootless Docker and Podman detection; clear "not running" and "no permission" screens.
 - Dark and light themes, bundled Geist fonts, keyboard focus, optional running count on the panel icon.
 - Translations: Tiếng Việt, Español, Français, Deutsch, Português (Brasil), Русский, 日本語, 简体中文, via gettext (`po/`, `tools/i18n.sh`).
+- Website on GitHub Pages (English and Vietnamese) with Open Graph, Twitter card, JSON-LD, sitemap and hreflang; README banner.
 - "Open on" setting to choose which tab the popup starts on.
 - Illustrated README (English and Vietnamese), contributor docs, CLA, issue and PR templates, CI.
 - `tools/screenshots.sh` regenerates the README images from a fake engine.

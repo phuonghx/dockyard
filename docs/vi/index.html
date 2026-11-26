@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dockyard: Widget Docker &amp; Podman cho KDE Plasma 6</title>
+<meta name="description" content="Dockyard là widget KDE Plasma 6 miễn phí, mã nguồn mở để theo dõi và quản lý container, image, volume và log của Docker và Podman ngay trên panel. Dành cho Fedora KDE.">
+<link rel="canonical" href="https://phuonghx.github.io/dockyard/vi/">
+<link rel="alternate" hreflang="en" href="https://phuonghx.github.io/dockyard/">
+<link rel="alternate" hreflang="vi" href="https://phuonghx.github.io/dockyard/vi/">
+<link rel="alternate" hreflang="x-default" href="https://phuonghx.github.io/dockyard/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0b1017">
+<meta name="author" content="Xuan-Phuong Hoang">
+<meta name="keywords" content="Dockyard, Docker widget, Podman widget, KDE Plasma 6, plasmoid, Fedora KDE, container manager, docker GUI, Linux">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dockyard">
+<meta property="og:title" content="Dockyard: Widget Docker &amp; Podman cho KDE Plasma 6">
+<meta property="og:description" content="Dockyard là widget KDE Plasma 6 miễn phí, mã nguồn mở để theo dõi và quản lý container, image, volume và log của Docker và Podman ngay trên panel. Dành cho Fedora KDE.">
+<meta property="og:url" content="https://phuonghx.github.io/dockyard/vi/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://phuonghx.github.io/dockyard/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Widget Dockyard cho KDE Plasma ở giao diện tối và sáng, cạnh tab Images">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@phuonghx_">
+<meta name="twitter:creator" content="@phuonghx_">
+<meta name="twitter:title" content="Dockyard: Widget Docker &amp; Podman cho KDE Plasma 6">
+<meta name="twitter:description" content="Dockyard là widget KDE Plasma 6 miễn phí, mã nguồn mở để theo dõi và quản lý container, image, volume và log của Docker và Podman ngay trên panel. Dành cho Fedora KDE.">
+<meta name="twitter:image" content="https://phuonghx.github.io/dockyard/assets/og-image.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/Geist.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://phuonghx.github.io/dockyard/#app","name":"Dockyard","alternateName":"Dockyard for KDE Plasma","url":"https://phuonghx.github.io/dockyard/vi/","description":"Dockyard là widget KDE Plasma 6 miễn phí, mã nguồn mở để theo dõi và quản lý container, image, volume và log của Docker và Podman ngay trên panel. Dành cho Fedora KDE.","applicationCategory":"DeveloperApplication","applicationSubCategory":"Container management","operatingSystem":"Linux (KDE Plasma 6)","softwareRequirements":"KDE Plasma 6, Python 3, Docker or Podman","softwareVersion":"1.0.0","datePublished":"2026-11-26","license":"https://opensource.org/licenses/MIT","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://github.com/phuonghx/dockyard","codeRepository":"https://github.com/phuonghx/dockyard","installUrl":"https://phuonghx.github.io/dockyard/#install","image":"https://phuonghx.github.io/dockyard/assets/og-image.png","screenshot":["https://phuonghx.github.io/dockyard/images/overview-dark.png","https://phuonghx.github.io/dockyard/images/overview-light.png","https://phuonghx.github.io/dockyard/images/tab-images.png"],"inLanguage":["en","vi","es","fr","de","pt-BR","ru","ja","zh-CN"],"featureList":["Manifest strip of every container","CPU and memory with history","Compose project grouping","Live colour-coded logs","Shell access","Image, volume and network management","Safe disk clean-up","Desktop notifications","Dark and light themes","9 languages"],"author":{"@id":"https://phuonghx.github.io/dockyard/#author"}},{"@type":"Person","@id":"https://phuonghx.github.io/dockyard/#author","name":"Xuan-Phuong Hoang","url":"https://github.com/phuonghx","sameAs":["https://github.com/phuonghx","https://x.com/phuonghx_","https://facebook.com/phuonghx.me"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Dockyard là gì?","acceptedAnswer":{"@type":"Answer","text":"Dockyard là widget miễn phí, mã nguồn mở cho KDE Plasma 6. Nó nằm trên panel của bạn để theo dõi và quản lý container, image, volume, network của Docker hoặc Podman, đọc log và giải phóng dung lượng đĩa, không cần mở terminal hay một ứng dụng nặng nề."}},{"@type":"Question","name":"Dockyard có dùng được với Podman không?","acceptedAnswer":{"@type":"Answer","text":"Có. Nó tự tìm Docker, Docker rootless và socket tương thích Docker của Podman, hoặc bạn đặt đường dẫn socket trong phần cài đặt của widget."}},{"@type":"Question","name":"Hỗ trợ hệ thống nào?","acceptedAnswer":{"@type":"Answer","text":"Mọi máy Linux chạy KDE Plasma 6, đã thử trên Fedora KDE. Đây là widget của Plasma nên không chạy trên GNOME hay môi trường desktop khác."}},{"@type":"Question","name":"Có cần Docker Desktop hay phần mềm khác không?","acceptedAnswer":{"@type":"Answer","text":"Không. Bạn chỉ cần Python 3 và một engine Docker hoặc Podman đang chạy. Dockyard nói chuyện trực tiếp với socket cục bộ của engine."}},{"@type":"Question","name":"Có an toàn không? Có gửi dữ liệu đi đâu không?","acceptedAnswer":{"@type":"Answer","text":"Dockyard không có telemetry và không gửi gì ra ngoài, chỉ nói chuyện với socket engine trên máy bạn. Giấy phép MIT, mã nguồn công khai trên GitHub. Lưu ý quyền truy cập socket Docker tương đương root, như mọi công cụ Docker."}},{"@type":"Question","name":"Làm sao để có quyền dùng Docker?","acceptedAnswer":{"@type":"Answer","text":"Thêm tài khoản vào nhóm docker bằng sudo usermod -aG docker $USER rồi đăng xuất, đăng nhập lại. Dockyard hiện đúng lệnh này khi phát hiện vấn đề."}},{"@type":"Question","name":"Tôi có thể dịch sang ngôn ngữ của mình không?","acceptedAnswer":{"@type":"Answer","text":"Được. Tạo bản mẫu bằng tools/i18n.sh new <mã ngôn ngữ>, dịch file bằng bất kỳ trình soạn thảo nào rồi mở pull request. Không cần biết lập trình. Xem mục Translating trong CONTRIBUTING.md."}}]},{"@type":"WebSite","@id":"https://phuonghx.github.io/dockyard/#site","name":"Dockyard","url":"https://phuonghx.github.io/dockyard/","inLanguage":"vi"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua tới nội dung</a>
+<header class="top"><div class="wrap bar">
+  <a class="brand" href="./"><img src="../assets/favicon.svg" width="30" height="30" alt="">Dockyard</a>
+  <nav class="main" aria-label="Main">
+    <a class="hide-sm" href="#features">Tính năng</a>
+    <a class="hide-sm" href="#install">Cài đặt</a>
+    <a class="hide-sm" href="#faq">Hỏi đáp</a>
+    <a href="https://github.com/phuonghx/dockyard">GitHub</a>
+    <a class="lang" href="../" hreflang="en" lang="en">English</a>
+  </nav>
+</div></header>
+<main id="main">
+  <section class="hero"><div class="wrap">
+    <h1>Docker và Podman, gọn gàng ngay trên panel KDE</h1>
+    <p class="lead">Dockyard là widget Plasma 6 miễn phí, mã nguồn mở: nhìn thấy mọi container trong một cái liếc, rồi chạy, dừng, khởi động lại, đọc log và dọn dẹp mà không cần rời màn hình làm việc. Dành cho Fedora KDE.</p>
+    <div class="cta"><a class="btn pri" href="#install">Cài chỉ với một lệnh</a><a class="btn" href="https://github.com/phuonghx/dockyard">★ Gắn sao trên GitHub</a></div>
+    <p class="trust">Miễn phí · Giấy phép MIT · Không thu thập dữ liệu · Docker, Docker rootless và Podman</p>
+    <div class="shot"><picture><source srcset="../images/hero.webp" type="image/webp"><img src="../images/hero.png" width="1400" height="755" alt="Widget Dockyard cho KDE Plasma ở giao diện tối và sáng, cạnh tab Images" fetchpriority="high"></picture></div>
+  </div></section>
+
+  <section class="manifest-sec" aria-labelledby="manifest"><div class="wrap">
+    <h2 id="manifest">Cả hệ thống container, vẽ như bảng kê hàng hoá trên tàu</h2>
+    <div class="cells" aria-hidden="true"><i class="run" style="--i:0"></i><i class="run" style="--i:1"></i><i class="warn" style="--i:2"></i><i class="run" style="--i:3"></i><i class="idle" style="--i:4"></i><i class="run" style="--i:5"></i><i class="bad" style="--i:6"></i><i class="run" style="--i:7"></i><i class="run" style="--i:8"></i><i class="info" style="--i:9"></i><i class="run" style="--i:10"></i><i class="fail" style="--i:11"></i><i class="run" style="--i:12"></i><i class="run" style="--i:13"></i><i class="bad" style="--i:14"></i><i class="run" style="--i:15"></i><i class="run" style="--i:16"></i><i class="warn" style="--i:17"></i><i class="run" style="--i:18"></i><i class="run" style="--i:19"></i><i class="idle" style="--i:20"></i><i class="run" style="--i:21"></i></div>
+    <ul class="legend"><li><span class="dot run"></span>Đang chạy</li><li><span class="dot bad"></span>Cần chú ý</li><li><span class="dot warn"></span>Tạm dừng</li><li><span class="dot idle"></span>Đã dừng</li></ul>
+    <p class="lead" style="margin-top:26px">Mỗi ô là một container, đổi màu theo trạng thái. Ô giữ nguyên vị trí khi trạng thái đổi, nên sự cố tự nổi lên mà bạn không phải đi tìm. Bấm vào một ô, danh sách nhảy tới container đó. Mỗi trạng thái còn có hình dạng riêng, nên người khó phân biệt màu vẫn đọc được.</p>
+  </div></section>
+
+  <section class="feat" id="features" aria-label="Tính năng"><div class="wrap" style="display:grid;gap:96px">
+      <div class="row"><div class="txt"><h2>Biết trước khi hỏng</h2><p>CPU và RAM của mọi thứ đang chạy, kèm biểu đồ lịch sử. Bộ lọc một chạm: đang chạy, cần chú ý, đã dừng. Khi container crash, mất healthy hoặc khởi động lại liên tục, bạn nhận thông báo trên desktop.</p><ul><li>Container được nhóm theo dự án Compose</li><li>Chạy, dừng, khởi động lại cả dự án cùng lúc</li><li>CPU, RAM và mạng trực tiếp theo từng container</li></ul></div><div class="pic"><picture><source srcset="../images/overview-dark.webp" type="image/webp"><img src="../images/overview-dark.png" width="500" height="800" alt="Tổng quan Dockyard: biểu đồ CPU và RAM, dải manifest và container nhóm theo dự án Compose" loading="lazy"></picture></div></div>
+      <div class="row flip"><div class="txt"><h2>Mọi thứ engine đang có</h2><p>Image, volume và network chỉ cách một tab, có nhãn Đang dùng và Không dùng. Xoá thứ không cần; nếu còn đang dùng, engine từ chối và Dockyard cho bạn biết lý do. Bảng dọn dẹp cho biết mỗi thao tác xoá gì và giải phóng bao nhiêu trước khi bạn xác nhận.</p><ul><li>Image mồ côi và không dùng, volume ẩn danh, cache build</li><li>Volume có tên không bao giờ bị dọn dẹp đụng tới</li><li>Xác nhận hai bước thay cho hộp thoại làm gián đoạn</li></ul></div><div class="pic"><picture><source srcset="../images/tab-images.webp" type="image/webp"><img src="../images/tab-images.png" width="500" height="800" alt="Tab Images của Dockyard với nhãn Đang dùng và Không dùng" loading="lazy"></picture></div></div>
+      <div class="row"><div class="txt"><h2>Bình tĩnh khi có sự cố</h2><p>Docker chưa chạy, thiếu quyền với socket, chưa cài engine: Dockyard nói rõ chuyện gì xảy ra bằng ngôn ngữ dễ hiểu và đưa đúng cách sửa, kèm nút sao chép hoặc nút khởi động Docker.</p><ul><li>Tự nhận Docker, Docker rootless và Podman</li><li>Mở log trực tiếp, tô màu theo mức lỗi của từng container</li><li>Mở shell trong container chỉ một cú bấm</li></ul></div><div class="pic two"><picture><source srcset="../images/error-not-running.webp" type="image/webp"><img src="../images/error-not-running.png" width="500" height="800" alt="Thông báo của Dockyard: Docker chưa chạy, kèm nút Start Docker" loading="lazy"></picture><picture><source srcset="../images/error-permission.webp" type="image/webp"><img src="../images/error-permission.png" width="500" height="800" alt="Thông báo của Dockyard: không có quyền dùng socket Docker, kèm nút Copy fix" loading="lazy"></picture></div></div>
+  </div></section>
+
+  <section class="feat" aria-labelledby="langs"><div class="wrap">
+    <h2 id="langs">Nói ngôn ngữ của bạn</h2>
+    <p class="lead" style="margin-top:16px">Dockyard tự theo ngôn ngữ hệ thống. Hiện có: English, Tiếng Việt, Español, Français, Deutsch, Português (Brasil), Русский, 日本語 và 简体中文. Thêm ngôn ngữ mới chỉ cần sửa một file, không cần viết code.</p>
+    <div class="wide"><picture><source srcset="../images/languages.webp" type="image/webp"><img src="../images/languages.png" width="1600" height="621" alt="Dockyard hiển thị bằng tiếng Việt, Đức, Nga và Nhật" loading="lazy"></picture></div>
+  </div></section>
+
+  <section class="allf" aria-labelledby="all"><div class="wrap">
+    <h2 id="all">Đủ đồ nghề trong hộp</h2>
+    <ul><li><strong>Dải manifest</strong>: cả hệ thống là một hàng ô bấm được</li><li><strong>Chỉ số toàn hệ thống</strong>: CPU và RAM kèm lịch sử</li><li><strong>Hiểu Compose</strong>: nhóm, thu gọn và thao tác theo dự án</li><li><strong>Log trực tiếp</strong>: tô màu, tạm dừng, sao chép</li><li><strong>Mở shell</strong>: bash hoặc sh trong Konsole</li><li><strong>Cổng bấm được</strong>: mở trong trình duyệt hoặc sao chép địa chỉ</li><li><strong>Image, volume, network</strong>: nhãn, bộ lọc, xoá an toàn</li><li><strong>Giải phóng dung lượng</strong>: có số liệu và giải thích trước khi xác nhận</li><li><strong>Thông báo</strong>: crash, health check lỗi, khởi động lại liên tục</li><li><strong>Sáng và tối</strong>: theo bảng màu và cỡ chữ của Plasma</li><li><strong>Dễ tiếp cận</strong>: điều hướng bằng phím, trạng thái có cả hình dạng</li><li><strong>9 ngôn ngữ</strong>: dịch bằng gettext, dễ mở rộng</li></ul>
+  </div></section>
+
+  <section class="install" id="install" aria-labelledby="inst"><div class="wrap">
+    <h2 id="inst">Cài trên Fedora KDE chưa đến một phút</h2>
+    <ol class="steps">
+        <li><div><h3>Kiểm tra điều kiện</h3><p class="mut">KDE Plasma 6, Python 3 (Fedora có sẵn), và Docker hoặc Podman. Không cần gì thêm.</p></div></li>
+        <li><div><h3>Cài widget</h3><p class="mut">Cài cho riêng bạn, không cần quyền root.</p><div class="code"><pre><code>git clone https://github.com/phuonghx/dockyard
+cd dockyard &amp;&amp; ./install.sh --restart</code></pre><button class="btn copy" type="button" data-copy="git clone https://github.com/phuonghx/dockyard
+cd dockyard &amp;&amp; ./install.sh --restart" data-done="Đã chép">Sao chép</button></div></div></li>
+        <li><div><h3>Thêm vào panel</h3><p class="mut">Chuột phải panel, chọn Add Widgets, tìm Dockyard rồi kéo vào. Muốn thử trước, chạy plasmawindowed io.dockyard.widget.</p></div></li>
+    </ol>
+    <p class="note">Không kết nối được Docker? Thêm bạn vào nhóm docker rồi đăng xuất, đăng nhập lại: sudo usermod -aG docker $USER. Với Podman: systemctl --user enable --now podman.socket.</p>
+    <p class="note">Cập nhật bằng git pull &amp;&amp; ./install.sh. Gỡ bằng ./install.sh --uninstall.</p>
+  </div></section>
+
+  <section class="faq" id="faq" aria-labelledby="faqh"><div class="wrap">
+    <h2 id="faqh" style="margin-bottom:28px">Câu hỏi thường gặp</h2>
+    <details><summary>Dockyard là gì?</summary><p>Dockyard là widget miễn phí, mã nguồn mở cho KDE Plasma 6. Nó nằm trên panel của bạn để theo dõi và quản lý container, image, volume, network của Docker hoặc Podman, đọc log và giải phóng dung lượng đĩa, không cần mở terminal hay một ứng dụng nặng nề.</p></details>
+    <details><summary>Dockyard có dùng được với Podman không?</summary><p>Có. Nó tự tìm Docker, Docker rootless và socket tương thích Docker của Podman, hoặc bạn đặt đường dẫn socket trong phần cài đặt của widget.</p></details>
+    <details><summary>Hỗ trợ hệ thống nào?</summary><p>Mọi máy Linux chạy KDE Plasma 6, đã thử trên Fedora KDE. Đây là widget của Plasma nên không chạy trên GNOME hay môi trường desktop khác.</p></details>
+    <details><summary>Có cần Docker Desktop hay phần mềm khác không?</summary><p>Không. Bạn chỉ cần Python 3 và một engine Docker hoặc Podman đang chạy. Dockyard nói chuyện trực tiếp với socket cục bộ của engine.</p></details>
+    <details><summary>Có an toàn không? Có gửi dữ liệu đi đâu không?</summary><p>Dockyard không có telemetry và không gửi gì ra ngoài, chỉ nói chuyện với socket engine trên máy bạn. Giấy phép MIT, mã nguồn công khai trên GitHub. Lưu ý quyền truy cập socket Docker tương đương root, như mọi công cụ Docker.</p></details>
+    <details><summary>Làm sao để có quyền dùng Docker?</summary><p>Thêm tài khoản vào nhóm docker bằng sudo usermod -aG docker $USER rồi đăng xuất, đăng nhập lại. Dockyard hiện đúng lệnh này khi phát hiện vấn đề.</p></details>
+    <details><summary>Tôi có thể dịch sang ngôn ngữ của mình không?</summary><p>Được. Tạo bản mẫu bằng tools/i18n.sh new &lt;mã ngôn ngữ&gt;, dịch file bằng bất kỳ trình soạn thảo nào rồi mở pull request. Không cần biết lập trình. Xem mục Translating trong CONTRIBUTING.md.</p></details>
+  </div></section>
+
+  <section class="oss" aria-labelledby="oss"><div class="wrap"><div class="grid">
+    <div><h2 id="oss">Miễn phí và mã nguồn mở</h2><p class="mut" style="margin-top:14px">Dockyard dùng giấy phép MIT. Hoan nghênh báo lỗi, ý tưởng, bản dịch và pull request.</p>
+      <ul><li><a href="https://github.com/phuonghx/dockyard/blob/main/CONTRIBUTING.md">Hướng dẫn đóng góp</a></li><li><a href="https://github.com/phuonghx/dockyard/blob/main/CONTRIBUTING.md#translating">Dịch Dockyard</a></li><li><a href="https://github.com/phuonghx/dockyard/issues">Báo lỗi hoặc đề xuất tính năng</a></li><li><a href="https://github.com/phuonghx/dockyard/blob/main/CHANGELOG.md">Nhật ký thay đổi</a></li><li><a href="https://github.com/phuonghx/dockyard/blob/main/CLA.md">Thoả thuận cấp phép đóng góp (CLA)</a></li></ul></div>
+    <div><h2>Tác giả</h2><p class="mut" style="margin-top:14px">Xuan-Phuong Hoang, một lập trình viên muốn Docker trên panel Fedora KDE của mình trông và hoạt động như một phần của hệ thống.</p>
+      <ul><li><a href="https://github.com/phuonghx">GitHub @phuonghx</a></li><li><a href="https://x.com/phuonghx_">X @phuonghx_</a></li><li><a href="https://facebook.com/phuonghx.me">Facebook @phuonghx.me</a></li><li><a href="mailto:phuonghx.me@gmail.com">phuonghx.me@gmail.com</a></li></ul></div>
+  </div></div></section>
+</main>
+<footer><div class="wrap"><span>Dockyard · Giấy phép MIT · Font Geist © Vercel, SIL OFL 1.1</span><span><a href="../" hreflang="en" lang="en">English</a> · <a href="https://github.com/phuonghx/dockyard">GitHub</a></span></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-copy'),d=b.getAttribute('data-done'),o=b.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent=d;setTimeout(function(){b.textContent=o},1600)},function(){})})})</script>
+</body>
+</html>
