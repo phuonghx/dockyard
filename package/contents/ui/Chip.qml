@@ -27,16 +27,21 @@ QQC2.AbstractButton {
         border.color: c.visualFocus ? Theme.acc : Theme.alpha(c.col, 0.5)
         Behavior on color { ColorAnimation { duration: Theme.fast } }
     }
-    contentItem: Row {
-        id: row
-        spacing: Theme.s(4)
-        Glyph { id: g; anchors.verticalCenter: parent.verticalCenter; size: Theme.s(11); color: c.col; visible: name.length > 0; weight: 2 }
-        Txt {
-            anchors.verticalCenter: parent.verticalCenter
-            text: c.text
-            kind: c.mono ? "monoSm" : "tiny"
-            strong: !c.mono
-            color: c.col
+    contentItem: Item {
+        implicitWidth: row.implicitWidth
+        implicitHeight: row.implicitHeight
+        Row {
+            id: row
+            spacing: Theme.s(4)
+            anchors.centerIn: parent
+            Glyph { id: g; anchors.verticalCenter: parent.verticalCenter; size: Theme.s(11); color: c.col; visible: name.length > 0; weight: 2 }
+            Txt {
+                anchors.verticalCenter: parent.verticalCenter
+                text: c.text
+                kind: c.mono ? "monoSm" : "tiny"
+                strong: !c.mono
+                color: c.col
+            }
         }
     }
     QQC2.ToolTip.visible: hovered && tip.length > 0

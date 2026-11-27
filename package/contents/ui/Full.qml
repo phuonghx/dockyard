@@ -116,7 +116,7 @@ Item {
         property string symbol
         property int count: 0
         property bool current: false
-        implicitHeight: Theme.s(32)
+        implicitHeight: Theme.s(34)
         Layout.fillWidth: true
         hoverEnabled: true
         focusPolicy: Qt.TabFocus
@@ -128,12 +128,17 @@ Item {
             border.color: tb.visualFocus ? Theme.acc : Theme.line
             Behavior on color { ColorAnimation { duration: Theme.fast } }
         }
-        contentItem: Row {
-            spacing: Theme.s(6)
-            anchors.centerIn: parent
-            Glyph { anchors.verticalCenter: parent.verticalCenter; name: tb.symbol; size: Theme.s(14); color: tb.current ? Theme.acc : Theme.tx3 }
-            Txt { anchors.verticalCenter: parent.verticalCenter; text: tb.text; kind: "small"; strong: tb.current; color: tb.current ? Theme.tx : Theme.tx2 }
-            Txt { anchors.verticalCenter: parent.verticalCenter; text: tb.count; kind: "tiny"; color: Theme.tx3; tnum: true }
+        contentItem: Item {
+            implicitWidth: tbRow.implicitWidth
+            implicitHeight: tbRow.implicitHeight
+            Row {
+                id: tbRow
+                spacing: Theme.s(5)
+                anchors.centerIn: parent
+                Glyph { anchors.verticalCenter: parent.verticalCenter; name: tb.symbol; size: Theme.s(14); color: tb.current ? Theme.acc : Theme.tx3 }
+                Txt { anchors.verticalCenter: parent.verticalCenter; text: tb.text; kind: "small"; strong: tb.current; color: tb.current ? Theme.tx : Theme.tx2 }
+                Txt { anchors.verticalCenter: parent.verticalCenter; text: tb.count; kind: "tiny"; color: Theme.tx3; tnum: true }
+            }
         }
     }
 
@@ -154,13 +159,17 @@ Item {
             border.color: tk.visualFocus ? Theme.acc : (tk.current ? Theme.lineStrong : Theme.line)
             Behavior on color { ColorAnimation { duration: Theme.fast } }
         }
-        contentItem: Row {
-            id: tkRow
-            spacing: Theme.s(6)
-            anchors.centerIn: parent
-            StatusDot { anchors.verticalCenter: parent.verticalCenter; tone: tk.tone; size: Theme.s(8) }
-            Txt { anchors.verticalCenter: parent.verticalCenter; text: tk.n; kind: "small"; strong: true; tnum: true }
-            Txt { anchors.verticalCenter: parent.verticalCenter; text: tk.text; kind: "small"; color: Theme.tx2 }
+        contentItem: Item {
+            implicitWidth: tkRow.implicitWidth
+            implicitHeight: tkRow.implicitHeight
+            Row {
+                id: tkRow
+                spacing: Theme.s(6)
+                anchors.centerIn: parent
+                StatusDot { anchors.verticalCenter: parent.verticalCenter; tone: tk.tone; size: Theme.s(8) }
+                Txt { anchors.verticalCenter: parent.verticalCenter; text: tk.n; kind: "small"; strong: true; tnum: true }
+                Txt { anchors.verticalCenter: parent.verticalCenter; text: tk.text; kind: "small"; color: Theme.tx2 }
+            }
         }
     }
 
