@@ -6,7 +6,7 @@
     "Description": "Keep every container shipshape. Monitor and manage Docker and Podman from your panel.",
     "Icon": "dockyard",
     "Category": "System Information",
-    "Version": "1.0.0",
+    "Version": "1.0.1",
     "License": "MIT",
     "Authors": [
       {

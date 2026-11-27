@@ -4,6 +4,13 @@ versions follow [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-27
+### Fixed
+- Text in the tabs, the status tokens and the chips (for example "In use" and image tags) is now centred instead of sticking to the left edge.
+- Tabs are a little taller, so their border no longer hugs the label.
+### Changed
+- Screenshots in the README and on the website are regenerated.
+
 ## [1.0.0] - 2026-11-26
 ### Added
 - First release of Dockyard for Plasma 6 on Fedora.
